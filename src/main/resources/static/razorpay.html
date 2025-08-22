@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Test Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .input-group {
+            margin: 10px 0;
+            width: 100%;
+            max-width: 500px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .program-container {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .program-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #3399cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 500px;
+            min-height: 100px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+        .radio-group {
+            margin-bottom: 15px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Razorpay Test Payment</h1>
+    
+    <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" value="Ashok">
+    </div>
+    
+    <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" value="harikrishna055hari@gmail.com">
+    </div>
+    
+    <div class="input-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" value="6301615610">
+    </div>
+    
+    <div class="input-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" value="Kurnool">
+    </div>
+    
+    <div class="input-group">
+        <div class="radio-group">
+            <label><input type="radio" name="programType" value="single" checked> Single Program</label>
+            <label><input type="radio" name="programType" value="two"> Two Programs</label>
+            <label><input type="radio" name="programType" value="three"> Three Programs</label>
+        </div>
+    </div>
+    
+    <!-- Single Program -->
+    <div id="singleProgram" class="input-group program-container">
+        <div class="program-title">Program Information</div>
+        <div class="input-group">
+            <label for="programId">Program ID</label>
+            <input type="text" id="programId" value="AIF-8">
+        </div>
+        <div class="input-group">
+            <label for="organizationId">Organization ID</label>
+            <input type="text" id="organizationId" value="SVCE">
+        </div>
+        <div class="input-group">
+            <label for="maxCohorts">Max Cohorts</label>
+            <input type="number" id="maxCohorts" value="1" min="1">
+        </div>
+        <div class="input-group">
+            <label for="amount">Amount (INR)</label>
+            <input type="number" id="amount" value="500" min="1" step="1">
+        </div>
+    </div>
+    
+    <!-- Two Programs -->
+    <div id="twoPrograms" class="input-group program-container hidden">
+        <div class="program-title">Program 1</div>
+        <div class="input-group">
+            <label for="program1Id">Program ID</label>
+            <input type="text" id="program1Id" value="AIF-8">
+        </div>
+        <div class="input-group">
+            <label for="organization1Id">Organization ID</label>
+            <input type="text" id="organization1Id" value="SVCE">
+        </div>
+        <div class="input-group">
+            <label for="maxCohorts1">Max Cohorts</label>
+            <input type="number" id="maxCohorts1" value="1" min="1">
+        </div>
+        <div class="input-group">
+            <label for="amount1">Amount (INR)</label>
+            <input type="number" id="amount1" value="300" min="1" step="1">
+        </div>
+        
+        <div class="program-title">Program 2</div>
+        <div class="input-group">
+            <label for="program2Id">Program ID</label>
+            <input type="text" id="program2Id" value="AIF-7">
+        </div>
+        <div class="input-group">
+            <label for="organization2Id">Organization ID</label>
+            <input type="text" id="organization2Id" value="SVCE">
+        </div>
+        <div class="input-group">
+            <label for="maxCohorts2">Max Cohorts</label>
+            <input type="number" id="maxCohorts2" value="1" min="1">
+        </div>
+        <div class="input-group">
+            <label for="amount2">Amount (INR)</label>
+            <input type="number" id="amount2" value="300" min="1" step="1">
+        </div>
+        
+        <div class="input-group">
+            <label for="totalAmount2">Total Amount (INR)</label>
+            <input type="number" id="totalAmount2" value="600" readonly>
+        </div>
+    </div>
+    
+    <!-- Three Programs -->
+    <div id="threePrograms" class="input-group program-container hidden">
+        <div class="program-title">Program 1</div>
+        <div class="input-group">
+            <label for="program1Id3">Program ID</label>
+            <input type="text" id="program1Id3" value="AIF-8">
+        </div>
+        <div class="input-group">
+            <label for="organization1Id3">Organization ID</label>
+            <input type="text" id="organization1Id3" value="SVCE">
+        </div>
+        <div class="input-group">
+            <label for="maxCohorts1_3">Max Cohorts</label>
+            <input type="number" id="maxCohorts1_3" value="1" min="1">
+        </div>
+        <div class="input-group">
+            <label for="amount1_3">Amount (INR)</label>
+            <input type="number" id="amount1_3" value="200" min="1" step="1">
+        </div>
+        
+        <div class="program-title">Program 2</div>
+        <div class="input-group">
+            <label for="program2Id3">Program ID</label>
+            <input type="text" id="program2Id3" value="AIF-7">
+        </div>
+        <div class="input-group">
+            <label for="organization2Id3">Organization ID</label>
+            <input type="text" id="organization2Id3" value="SVCE">
+        </div>
+        <div class="input-group">
+            <label for="maxCohorts2_3">Max Cohorts</label>
+            <input type="number" id="maxCohorts2_3" value="1" min="1">
+        </div>
+        <div class="input-group">
+            <label for="amount2_3">Amount (INR)</label>
+            <input type="number" id="amount2_3" value="200" min="1" step="1">
+        </div>
+        
+        <div class="program-title">Program 3</div>
+        <div class="input-group">
+            <label for="program3Id3">Program ID</label>
+            <input type="text" id="program3Id3" value="AIF-6">
+        </div>
+        <div class="input-group">
+            <label for="organization3Id3">Organization ID</label>
+            <input type="text" id="organization3Id3" value="SVCE">
+        </div>
+        <div class="input-group">
+            <label for="maxCohorts3_3">Max Cohorts</label>
+            <input type="number" id="maxCohorts3_3" value="1" min="1">
+        </div>
+        <div class="input-group">
+            <label for="amount3_3">Amount (INR)</label>
+            <input type="number" id="amount3_3" value="200" min="1" step="1">
+        </div>
+        
+        <div class="input-group">
+            <label for="totalAmount3">Total Amount (INR)</label>
+            <input type="number" id="totalAmount3" value="600" readonly>
+        </div>
+    </div>
+    
+    <button id="payButton">Pay Now</button>
+    
+    <div id="response"></div>
+
+    <script>
+        // Show/hide program containers based on selection
+        document.querySelectorAll('input[name="programType"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.getElementById('singleProgram').classList.add('hidden');
+                document.getElementById('twoPrograms').classList.add('hidden');
+                document.getElementById('threePrograms').classList.add('hidden');
+                
+                if (this.value === 'single') {
+                    document.getElementById('singleProgram').classList.remove('hidden');
+                } else if (this.value === 'two') {
+                    document.getElementById('twoPrograms').classList.remove('hidden');
+                } else if (this.value === 'three') {
+                    document.getElementById('threePrograms').classList.remove('hidden');
+                }
+            });
+        });
+        
+        // Calculate total for two programs
+        function calculateTotalTwo() {
+            const amount1 = parseFloat(document.getElementById('amount1').value) || 0;
+            const amount2 = parseFloat(document.getElementById('amount2').value) || 0;
+            document.getElementById('totalAmount2').value = amount1 + amount2;
+        }
+        document.getElementById('amount1').addEventListener('input', calculateTotalTwo);
+        document.getElementById('amount2').addEventListener('input', calculateTotalTwo);
+        
+        // Calculate total for three programs
+        function calculateTotalThree() {
+            const amount1_3 = parseFloat(document.getElementById('amount1_3').value) || 0;
+            const amount2_3 = parseFloat(document.getElementById('amount2_3').value) || 0;
+            const amount3_3 = parseFloat(document.getElementById('amount3_3').value) || 0;
+            document.getElementById('totalAmount3').value = amount1_3 + amount2_3 + amount3_3;
+        }
+        document.getElementById('amount1_3').addEventListener('input', calculateTotalThree);
+        document.getElementById('amount2_3').addEventListener('input', calculateTotalThree);
+        document.getElementById('amount3_3').addEventListener('input', calculateTotalThree);
+        
+        function updateResponse(message) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.innerHTML += `<p>${new Date().toLocaleTimeString()}: ${message}</p>`;
+            responseDiv.scrollTop = responseDiv.scrollHeight;
+        }
+
+        document.getElementById('payButton').onclick = function() {
+            const programType = document.querySelector('input[name="programType"]:checked').value;
+            let amount, notes;
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            
+            if (programType === 'single') {
+                // Single program enrollment
+                amount = document.getElementById('amount').value;
+                const programId = document.getElementById('programId').value;
+                const organizationId = document.getElementById('organizationId').value;
+                const maxCohorts = document.getElementById('maxCohorts').value;
+                
+                notes = {
+                    user_name: name,
+                    user_email: email,
+                    user_phone: phone,
+                    user_address: address,
+                    program_id: programId,
+                    organization_id: organizationId,
+                    max_cohorts: parseInt(maxCohorts)
+                };
+            } else if (programType === 'two') {
+                // Two program enrollment
+                amount = document.getElementById('totalAmount2').value;
+				
+				// Create enrollments array
+				                const enrollments = [
+				                    {
+				                        program_id: document.getElementById('program1Id').value,
+				                        organization_id: document.getElementById('organization1Id').value,
+				                        max_cohorts: parseInt(document.getElementById('maxCohorts1').value),
+				                        amount: parseFloat(document.getElementById('amount1').value)
+				                    },
+				                    {
+				                        program_id: document.getElementById('program2Id').value,
+				                        organization_id: document.getElementById('organization2Id').value,
+				                        max_cohorts: parseInt(document.getElementById('maxCohorts2').value),
+				                        amount: parseFloat(document.getElementById('amount2').value)
+				                    }
+				                ];
+                notes = {
+                    user_name: name,
+                    user_email: email,
+                    user_phone: phone,
+                    user_address: address,
+                    enrollments: JSON.stringify(enrollments)
+					};
+					// Add flat structure for backup
+					               enrollments.forEach((enrollment, i) => {
+					                   Object.keys(enrollment).forEach(key => {
+					                       notes[`enrollments[${i}].${key}`] = enrollment[key];
+					                   });
+					               });
+					           } else if (programType === 'three') {
+					               // Three program enrollment
+					               amount = document.getElementById('totalAmount3').value;
+					               
+					               // Create enrollments array
+					               const enrollments = [
+					                   {
+					                       program_id: document.getElementById('program1Id3').value,
+					                       organization_id: document.getElementById('organization1Id3').value,
+					                       max_cohorts: parseInt(document.getElementById('maxCohorts1_3').value),
+					                       amount: parseFloat(document.getElementById('amount1_3').value)
+					                   },
+					                   {
+					                       program_id: document.getElementById('program2Id3').value,
+					                       organization_id: document.getElementById('organization2Id3').value,
+					                       max_cohorts: parseInt(document.getElementById('maxCohorts2_3').value),
+					                       amount: parseFloat(document.getElementById('amount2_3').value)
+					                   },
+					                   {
+					                       program_id: document.getElementById('program3Id3').value,
+					                       organization_id: document.getElementById('organization3Id3').value,
+					                       max_cohorts: parseInt(document.getElementById('maxCohorts3_3').value),
+					                       amount: parseFloat(document.getElementById('amount3_3').value)
+					                   }
+					               ];
+					               
+					               // CHANGED: Stringify the enrollments array for Razorpay
+					               notes = {
+					                   user_name: name,
+					                   user_email: email,
+					                   user_phone: phone,
+					                   user_address: address,
+					                   enrollments: JSON.stringify(enrollments)
+					               };
+					               
+					               // Add flat structure for backup
+					               enrollments.forEach((enrollment, i) => {
+					                   Object.keys(enrollment).forEach(key => {
+					                       notes[`enrollments[${i}].${key}`] = enrollment[key];
+					                   });
+					               });
+					           }
+					           
+					           updateResponse(`Creating order for amount: ₹${amount}`);
+					           
+					           const params = new URLSearchParams({
+					               amount: amount,
+					               currency: 'INR'
+					           });
+					           
+					           fetch(`/api/v1/payments/createOrder?${params.toString()}`, {
+					               method: 'GET',
+					               headers: {
+					                   'Content-Type': 'application/json'
+					               }
+					           })
+					           .then(response => {
+					               if (!response.ok) {
+					                   throw new Error('Failed to create order');
+					               }
+					               return response.json();
+					           })
+					           .then(data => {
+					               updateResponse(`Order created: ${JSON.stringify(data)}`);
+					               
+					               // Display notes for debugging
+					               updateResponse(`Payment notes: ${JSON.stringify(notes)}`);
+					               
+					               const options = {
+					                   key: "rzp_test_UCyO771J6mtj5d",  // Replace with your actual key
+					                   amount: data.amount,
+					                   currency: data.currency,
+					                   order_id: data.id,
+					                   handler: function (response) {
+					                       updateResponse('Payment successful. Verifying payment...');
+					                       verifyPayment(data.id, response.razorpay_payment_id, response.razorpay_signature);
+					                   },
+					                   prefill: {
+					                       name: name,
+					                       email: email,
+					                       contact: phone
+					                   },
+					                   notes: notes,
+					                   theme: {
+					                       color: "#3399cc"
+					                   }
+					               };
+					               
+					               const rzp1 = new Razorpay(options);
+					               rzp1.on('payment.failed', function (response) {
+					                   updateResponse("Payment Failed");
+					                   alert("Payment failed:\n" + JSON.stringify(response.error, null, 2));
+					               });
+
+					               rzp1.open();
+					           })
+					           .catch(error => {
+					               console.error('Error:', error);
+					               updateResponse(`Error: ${error.message}`);
+					           });
+					       };
+
+					       function verifyPayment(orderId, paymentId, signature) {
+					           const params = new URLSearchParams({
+					               orderId: orderId,
+					               paymentId: paymentId,
+					               razorpaySignature: signature
+					           });
+
+					           fetch('/api/v1/payments/verify', {
+					               method: 'POST',
+					               headers: {
+					                   'Content-Type': 'application/x-www-form-urlencoded'
+					               },
+					               body: params
+					           })
+					           .then(response => response.text())
+					           .then(result => {
+					               updateResponse(`Verification result: ${result}`);
+					           })
+					           .catch(error => {
+					               console.error('Error:', error);
+					               updateResponse(`Verification error: ${error.message}`);
+					           });
+					       }
+					   </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Test Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .input-group {
+            margin: 10px 0;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #3399cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 500px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Razorpay Test Payment</h1>
+    
+    <div class="input-group">
+        <label for="amount">Amount (INR)</label>
+        <input type="number" id="amount" value="500" min="1" step="1">
+    </div>
+    
+    <button id="payButton">Pay Now</button>
+    
+    <div id="response"></div>
+
+    <script>
+        function updateResponse(message) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.innerHTML += `<p>${new Date().toLocaleTimeString()}: ${message}</p>`;
+        }
+
+        document.getElementById('payButton').onclick = function() {
+            const amount = document.getElementById('amount').value;
+            
+            const params = new URLSearchParams({
+                amount: amount,
+                currency: 'INR'
+            });
+            
+            updateResponse(`Creating order for amount: ₹${amount}`);
+            
+            fetch(`/api/v1/payments/createOrder?${params.toString()}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to create order');
+                }
+                return response.json();
+            })
+            .then(data => {
+                updateResponse(`Order created: ${JSON.stringify(data)}`);
+                
+                const options = {
+                    key: "rzp_test_UCyO771J6mtj5d",  // Replace with your actual key
+                    amount: data.amount,
+                    currency: data.currency,
+                    order_id: data.id,
+                    handler: function (response) {
+                        updateResponse('Payment successful. Verifying payment...');
+                        verifyPayment(data.id, response.razorpay_payment_id, response.razorpay_signature);
+                    },
+                    prefill: {
+                        name: "Ashok",
+                        email: "harikrishna055hari@gmail.com",
+                        contact: "6301615610"
+                    },
+					notes: {
+						      name: "Ashok",
+						      email: "harikrishna055hari@gmail.com",
+						      contact: "6301615610",
+					          program_id: "AIF-8",  // Add program ID
+					          organization_id: "SVCE", // Add organization ID
+					          max_cohorts: 3,               // Add max cohorts
+					          address: "Kurnool"
+					            },
+                    theme: {
+                        color: "#3399cc"
+                    }
+                };
+                
+				const rzp1 = new Razorpay(options);
+				            rzp1.on('payment.failed', function (response) {
+				                updateResponse("Payment Failed");
+				                alert("Payment failed:\n" + JSON.stringify(response.error, null, 2));
+				            });
+
+				            rzp1.open();
+				        })
+            .catch(error => {
+                console.error('Error:', error);
+                updateResponse(`Error: ${error.message}`);
+            });
+        };
+
+        function verifyPayment(orderId, paymentId, signature) {
+            const params = new URLSearchParams({
+                orderId: orderId,
+                paymentId: paymentId,
+                razorpaySignature: signature
+            });
+
+            fetch('/api/v1/payments/verify', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: params
+            })
+            .then(response => response.text())
+            .then(result => {
+                updateResponse(`Verification result: ${result}`);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                updateResponse(`Verification error: ${error.message}`);
+            });
+        }
+    </script>
+</body>
+</html>

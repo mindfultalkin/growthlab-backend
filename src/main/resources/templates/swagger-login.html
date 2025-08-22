@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swagger Authentication - Growth Labs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 420px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-header h1 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.9rem;
+            font-weight: 600;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.85rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 0.85rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            background: linear-gradient(45deg, #fee, #fdd);
+            color: #c33;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #c33;
+            font-weight: 500;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .success-message {
+            background: linear-gradient(45deg, #efe, #dfd);
+            color: #4a7c59;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #4a7c59;
+            font-weight: 500;
+        }
+
+        .swagger-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #85ea2d, #5cb85c);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(133, 234, 45, 0.3);
+        }
+
+        .footer-links {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .loading .login-btn {
+            background: #ccc;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="swagger-icon">API</div>
+            <h1>Swagger Access</h1>
+            <p>SuperAdmin authentication required for API documentation</p>
+        </div>
+
+        <div th:if="${error}" class="error-message">
+            <strong>Authentication Failed:</strong> Invalid username or password. Please try again.
+        </div>
+
+        <div th:if="${logout}" class="success-message">
+            <strong>Logged Out:</strong> You have been successfully logged out.
+        </div>
+
+        <form action="/api/v1/swagger/authenticate" method="post" id="loginForm">
+            <div class="form-group">
+                <label for="userId">SuperAdmin Username:</label>
+                <input type="text" id="userId" name="userId" required autocomplete="username" 
+                       placeholder="Enter your SuperAdmin ID">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required autocomplete="current-password"
+                       placeholder="Enter your password">
+            </div>
+
+            <button type="submit" class="login-btn" id="submitBtn">
+                <span id="btnText">Access Swagger UI</span>
+                <span id="btnLoader" style="display: none;">Authenticating...</span>
+            </button>
+        </form>
+
+        <div class="footer-links">
+            <a href="/">← Back to Home</a>
+            <span>|</span>
+            <a href="/api/v1/swagger/unauthorized">Help</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function() {
+            const container = document.querySelector('.login-container');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnLoader = document.getElementById('btnLoader');
+            
+            container.classList.add('loading');
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline';
+            submitBtn.disabled = true;
+        });
+
+        // Auto-focus on first input
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('userId').focus();
+        });
+
+        // Enter key handling
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('loginForm').submit();
+            }
+        });
+    </script>
+</body>
+</html>
