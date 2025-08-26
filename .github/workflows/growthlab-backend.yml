@@ -44,7 +44,7 @@ jobs:
         run: |
           IMAGE_URI=${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
           echo "IMAGE_URI=$IMAGE_URI" >> $GITHUB_ENV
-          docker build -t $IMAGE_URI -f growthlab-backend/Dockerfile growthlab-backend
+          docker build -t $IMAGE_URI -f Dockerfile
           docker push $IMAGE_URI
 
       - name: Render new ECS task definition
