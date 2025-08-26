@@ -41,11 +41,12 @@ jobs:
           mask-password: true
 
       - name: Build, tag, and push Docker image to ECR
-        run: |
+          run: |
           IMAGE_URI=${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
           echo "IMAGE_URI=$IMAGE_URI" >> $GITHUB_ENV
-          docker build -t $IMAGE_URI -f Dockerfile
+          docker build -t $IMAGE_URI -f Dockerfile .
           docker push $IMAGE_URI
+
 
       - name: Render new ECS task definition
         id: render-task
