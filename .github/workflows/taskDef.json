@@ -323,7 +323,6 @@
           "name": "SPRING_THYMELEAF_CACHE",
           "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/thymeleaf/cache"
         }
-
       ],
       "logConfiguration": {
         "logDriver": "awslogs",
