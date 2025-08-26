@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 @Table(name = "organizations", uniqueConstraints = @UniqueConstraint(columnNames = "organization_admin_email"))
 public class Organization {
 
-	 private static final String DEFAULT_LOGO_URL = "/assets/default-logo.png";
+	 private static final String DEFAULT_LOGO_URL = "images/assets/default-logo.png";
 	 
     @Id
     @Column(name = "organization_id", nullable = false)

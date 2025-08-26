@@ -1,6 +1,5 @@
 package com.mindfultalk.growthlab.service;
 
-import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.mail.SimpleMailMessage;
@@ -17,10 +16,10 @@ import com.mindfultalk.growthlab.util.RandomStringUtil;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import org.slf4j.*;
 
 @Service
 @Transactional
@@ -177,26 +176,26 @@ public class OrganizationServiceImpl implements OrganizationService {
     private void sendWelcomeEmail(Organization organization, String plainPassword) {
         String adminName = organization.getOrganizationAdminName();
         String adminEmail = organization.getOrganizationAdminEmail();
-        String orgAdminUrl = "https://flowofenglish.thechippersage.com/admin"; // Replace with actual URL
-        String superAdminEmail = "support@thechippersage.com"; // Replace with actual Super Admin email
+        String orgAdminUrl = "https://programs-admin.mindfultalk.in"; 
+        String supportEmail = "support@mindfultalk.in"; 
 
-        String subject = "Welcome to Chippersage's Flow of English!";
+        String subject = "Welcome to Mindfultalk!";
         String messageText = "Hello " + adminName + ",\n\n" +
-                "We are thrilled to have you onboard Chippersage's Flow of English program. " +
-                "We are eager to see your learners excel in speaking, writing, and reading English.\n\n" +
-                "Let's go ahead and get started:\n" +
-                "1. Create Cohorts. In your admin dashboard, create cohorts for different learners for different programs. " +
-                "Reach out to " + superAdminEmail + " if you need help setting up cohorts and assigning learners to cohorts.\n" +
-                "2. Add Learners. Add learners to your organization and assign them to different cohorts. " +
-                "A learner can belong to different cohorts. You can add multiple learners all at once by using 'Add Bulk Learners'.\n" +
-                "3. Reports. Under Reports, you can view the progress of the learners as they start their learning journey in the assigned program.\n\n" +
-                "To get started, login to your dashboard with the following credentials:\n" +
+                "Welcome to Mindfultalk! We are excited to partner with your organization in improving business and professional communication. " +
+                "Our platform is designed to help professionals and learners articulate ideas effectively and make complex knowledge clear and actionable.\n\n" +
+                "Here are your first steps as an Admin:\n" +
+                "1. Create Cohorts: In your admin dashboard, set up cohorts to organize learners across different programs. " +
+                "If you need help, please reach out to " + supportEmail + ".\n" +
+                "2. Add Learners: Add learners to your organization and assign them to cohorts. A learner can belong to multiple cohorts. " +
+                "You can also bulk-upload learners for convenience.\n" +
+                "3. Track Progress: Under Reports, you can monitor learner progress as they engage with the assigned programs.\n\n" +
+                "To get started, log in to your dashboard with the following credentials:\n" +
                 "User ID: " + adminEmail + "\n" +
                 "Password: " + plainPassword + "\n" +
                 "Organization Dashboard: " + orgAdminUrl + "\n\n" +
-                "If you have any questions or need assistance, please feel free to reach out to " + superAdminEmail + ".\n\n" +
+                "If you have any questions or need support, our team is here to help at " + supportEmail + ".\n\n" +
                 "Best regards,\n" +
-                "Team Chippersage";
+                "Mindfultalk.in Team";
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(adminEmail);
@@ -204,6 +203,7 @@ public class OrganizationServiceImpl implements OrganizationService {
         message.setText(messageText);
         mailSender.send(message);
     }
+
 
 
     @Override
@@ -250,7 +250,7 @@ public class OrganizationServiceImpl implements OrganizationService {
         }
      // Assign default logo if missing
         if (organization.getLogo() == null || organization.getLogo().isBlank()) {
-            organization.setLogo("/assets/default-logo.png");
+            organization.setLogo("images/assets/default-logo.png");
         }
         // Generate organizationId before saving the organization
         organization.setOrganizationId(generateUniqueOrganizationId(organization.getOrganizationName()));
@@ -320,6 +320,10 @@ public class OrganizationServiceImpl implements OrganizationService {
                 existingOrganization.setOrganizationAdminName(updatedOrganization.getOrganizationAdminName());
                 existingOrganization.setOrganizationAdminEmail(updatedOrganization.getOrganizationAdminEmail());
                 existingOrganization.setOrganizationAdminPhone(updatedOrganization.getOrganizationAdminPhone());
+                existingOrganization.setIndustry(updatedOrganization.getIndustry());
+                existingOrganization.setLogo(updatedOrganization.getLogo());
+                existingOrganization.setSignature(updatedOrganization.getSignature());
+                existingOrganization.setThemeColors(updatedOrganization.getThemeColors());
 
                 // Hash and update password if provided
                 if (updatedOrganization.getOrgPassword() != null && !updatedOrganization.getOrgPassword().isEmpty()) {
@@ -453,7 +457,7 @@ public class OrganizationServiceImpl implements OrganizationService {
                              "This is a reminder that the cohort \"" + cohort.getCohortName() + 
                              "\" will end in " + daysToEnd + " days on " + cohort.getCohortEndDate() + ".\n\n" +
                              "Please ensure all related tasks are completed before this date.\n\n" +
-                             "Best regards,\nTeam Chippersage";
+                             "Best regards,\nMindfultalk.in Team";
 
             sendEmail(adminEmail, subject, message);
         }
@@ -474,7 +478,7 @@ public class OrganizationServiceImpl implements OrganizationService {
                                  "This is a reminder that your cohort \"" + cohort.getCohortName() + 
                                  "\" will end in " + daysToEnd + " days on " + cohort.getCohortEndDate() + ".\n\n" +
                                  "Please ensure you complete all tasks before this date.\n\n" +
-                                 "Best regards,\nTeam Chippersage";
+                                 "Best regards,\nMindfultalk.in Team";
 
                 sendEmail(userEmail, subject, message);
             }

@@ -1,0 +1,338 @@
+{
+  "family": "mindfultalkin-growthlab-backend-prod",
+  "executionRoleArn": "arn:aws:iam::325599888975:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::325599888975:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "containerDefinitions": [
+    {
+      "name": "mindfultalkin-growthlab-backend-prod",
+      "image": "325599888975.dkr.ecr.ap-south-1.amazonaws.com/mindfultalkin-growthlab-backend-prod:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "secrets": [
+        {
+          "name": "SPRING_APPLICATION_NAME",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/application-name"
+        },
+        {
+          "name": "SPRING_DATASOURCE_URL",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/url"
+        },
+        {
+          "name": "SPRING_DATASOURCE_USERNAME",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/username"
+        },
+        {
+          "name": "SPRING_DATASOURCE_PASSWORD",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/password"
+        },
+        {
+          "name": "SPRING_DATASOURCE_DRIVER_CLASS_NAME",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/driver-class-name"
+        },
+        {
+          "name": "SPRING_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/hikari/maximum-pool-size"
+        },
+        {
+          "name": "SPRING_DATASOURCE_HIKARI_MINIMUM_IDLE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/hikari/minimum-idle"
+        },
+        {
+          "name": "SPRING_DATASOURCE_HIKARI_CONNECTION_TIMEOUT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/hikari/connection-timeout"
+        },
+        {
+          "name": "SPRING_DATASOURCE_HIKARI_IDLE_TIMEOUT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/hikari/idle-timeout"
+        },
+        {
+          "name": "SPRING_DATASOURCE_HIKARI_MAX_LIFETIME",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/hikari/max-lifetime"
+        },
+        {
+          "name": "SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/jpa/properties/hibernate/dialect"
+        },
+        {
+          "name": "SPRING_JPA_HIBERNATE_DDL_AUTO",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/jpa/hibernate/ddl-auto"
+        },
+        {
+          "name": "SPRING_JPA_SHOW_SQL",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/jpa/show-sql"
+        },
+        {
+          "name": "SPRING_JPA_OPEN_IN_VIEW",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/jpa/open-in-view"
+        },
+        {
+          "name": "SERVER_PORT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/server/port"
+        },
+        {
+          "name": "SERVER_SERVLET_SESSION_TIMEOUT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/server/servlet/session/timeout"
+        },
+        {
+          "name": "SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/servlet/multipart/max-file-size"
+        },
+        {
+          "name": "SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/servlet/multipart/max-request-size"
+        },
+        {
+          "name": "JWT_SECRET_KEY",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/jwt/secret-key"
+        },
+        {
+          "name": "SPRING_MAIL_USERNAME",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/mail/username"
+        },
+        {
+          "name": "SPRING_MAIL_PASSWORD",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/mail/password"
+        },
+        {
+          "name": "SPRING_MAIL_HOST",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/mail/host"
+        },
+        {
+          "name": "SPRING_MAIL_PORT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/mail/port"
+        },
+        {
+          "name": "SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/mail/properties/smtp/auth"
+        },
+        {
+          "name": "SPRING_MAIL_PROPERTIES_MAIL_TRANSPORT_PROTOCOL",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/mail/properties/transport/protocol"
+        },
+        {
+          "name": "SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/mail/properties/smtp/starttls/enable"
+        },
+        {
+          "name": "SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_REQUIRED",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/mail/properties/smtp/starttls/required"
+        },
+        {
+          "name": "SPRING_MAIL_PROPERTIES_MAIL_SMTP_SSL_TRUST",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/mail/properties/smtp/ssl/trust"
+        },
+        {
+          "name": "AWS_ACCESSKEYID",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/aws/access-key-id"
+        },
+        {
+          "name": "AWS_SECRETKEY",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/aws/secret-key"
+        },
+        {
+          "name": "AWS_REGION",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/aws/region"
+        },
+        {
+          "name": "AWS_S3_BUCKET",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/aws/s3/bucket"
+        },
+        {
+          "name": "CLOUDFRONT_DOMAIN",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/cloudfront/domain"
+        },
+        {
+          "name": "CLOUDFRONT_KEYPAIRID",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/cloudfront/key-pair-id"
+        },
+        {
+          "name": "CLOUDFRONT_PRIVATE_KEY_CONTENT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/cloudfront/private-key"
+        },
+        {
+          "name": "CLOUDFRONT_URL_EXPIRATION_SECONDS",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/cloudfront/url-expiration-seconds"
+        },
+        {
+          "name": "RAZORPAY_KEYID",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/razorpay/key-id"
+        },
+        {
+          "name": "RAZORPAY_KEYSECRET",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/razorpay/key-secret"
+        },
+        {
+          "name": "RAZORPAY_WEBHOOKSECRET",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/razorpay/webhook-secret"
+        },
+        {
+          "name": "SPRING_DATA_REDIS_HOST",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/data/redis/host"
+        },
+        {
+          "name": "SPRING_DATA_REDIS_PORT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/data/redis/port"
+        },
+        {
+          "name": "SPRING_DATA_REDIS_TIMEOUT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/data/redis/timeout"
+        },
+        {
+          "name": "SPRING_DATA_REDIS_DATABASE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/data/redis/database"
+        },
+        {
+          "name": "SPRING_DATA_REDIS_PASSWORD",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/data/redis/password"
+        },
+        {
+          "name": "SPRING_DATA_REDIS_LETTUCE_POOL_MAX_ACTIVE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/data/redis/lettuce/pool/max-active"
+        },
+        {
+          "name": "SPRING_DATA_REDIS_LETTUCE_POOL_MAX_IDLE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/data/redis/lettuce/pool/max-idle"
+        },
+        {
+          "name": "SPRING_DATA_REDIS_LETTUCE_POOL_MIN_IDLE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/data/redis/lettuce/pool/min-idle"
+        },
+        {
+          "name": "SPRING_DATA_REDIS_LETTUCE_POOL_MAX_WAIT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/data/redis/lettuce/pool/max-wait"
+        },
+        {
+          "name": "SPRING_CACHE_TYPE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/cache/type"
+        },
+        {
+          "name": "SPRING_CACHE_REDIS_TIME_TO_LIVE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/cache/redis/time-to-live"
+        },
+        {
+          "name": "SPRING_CACHE_REDIS_USE_KEY_PREFIX",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/cache/redis/use-key-prefix"
+        },
+        {
+          "name": "SPRING_CACHE_REDIS_KEY_PREFIX",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/cache/redis/key-prefix"
+        },
+        {
+          "name": "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/management/endpoints/web/exposure/include"
+        },
+        {
+          "name": "MANAGEMENT_ENDPOINT_HEALTH_SHOW_DETAILS",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/management/endpoint/health/show-details"
+        },
+        {
+          "name": "MANAGEMENT_ENDPOINT_HEALTH_SHOW_COMPONENTS",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/management/endpoint/health/show-components"
+        },
+        {
+          "name": "MANAGEMENT_ENDPOINT_METRICS_ENABLED",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/management/endpoint/metrics/enabled"
+        },
+        {
+          "name": "SPRING_JPA_DATABASE_PLATFORM",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/jpa/database-platform"
+        },
+        {
+          "name": "SPRING_DATASOURCE_INITIALIZATION_MODE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/initialization-mode"
+        },
+        {
+          "name": "SPRING_DATASOURCE_CONTINUE_ON_ERROR",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/datasource/continue-on-error"
+        },
+        {
+          "name": "LOGGING_LEVEL_ROOT",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/logging/level/root"
+        },
+        {
+          "name": "LOGGING_LEVEL_ORG_SPRINGFRAMEWORK",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/logging/level/org/springframework"
+        },
+        {
+          "name": "LOGGING_LEVEL_COM_GROWTHLAB",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/logging/level/com/growthlab"
+        },
+        {
+          "name": "LOGGING_FILE_NAME",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/logging/file/name"
+        },
+        {
+          "name": "SPRINGDOC_API_DOCS_ENABLED",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/springdoc/api-docs/enabled"
+        },
+        {
+          "name": "SPRINGDOC_SWAGGER_UI_ENABLED",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/springdoc/swagger-ui/enabled"
+        },
+        {
+          "name": "SPRINGDOC_SWAGGER_UI_PATH",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/springdoc/swagger-ui/path"
+        },
+        {
+          "name": "SPRINGDOC_API_DOCS_PATH",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/springdoc/api-docs/path"
+        },
+        {
+          "name": "SPRINGDOC_SWAGGER_UI_DISABLE_SWAGGER_DEFAULT_URL",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/springdoc/swagger-ui/disable-swagger-default-url"
+        },
+        {
+          "name": "SPRINGDOC_SWAGGER_UI_USE_ROOT_PATH",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/springdoc/swagger-ui/use-root-path"
+        },
+        {
+          "name": "SERVER_SERVLET_SESSION_COOKIE_NAME",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/server/servlet/session/cookie/name"
+        },
+        {
+          "name": "SERVER_SERVLET_SESSION_COOKIE_HTTP_ONLY",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/server/servlet/session/cookie/http-only"
+        },
+        {
+          "name": "SERVER_SERVLET_SESSION_COOKIE_SECURE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/server/servlet/session/cookie/secure"
+        },
+        {
+          "name": "SPRING_THYMELEAF_PREFIX",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/thymeleaf/prefix"
+        },
+        {
+          "name": "SPRING_THYMELEAF_SUFFIX",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/thymeleaf/suffix"
+        },
+        {
+          "name": "SPRING_THYMELEAF_CACHE",
+          "valueFrom": "arn:aws:ssm:ap-south-1:325599888975:parameter/growthlab/prod/backend/spring/thymeleaf/cache"
+        }
+
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/mindfultalkin-growthlab-backend-prod",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
