@@ -332,3 +332,52 @@ Caused by: org.postgresql.util.PSQLException: FATAL: password authentication fai
 	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
 	... 116 common frames omitted
 
+2025-09-01T11:57:48.307+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 7184 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-01T11:57:48.319+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-01T11:57:48.458+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-01T11:57:48.458+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-01T11:57:50.898+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-01T11:57:50.898+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-01T11:57:51.276+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 350 ms. Found 20 JPA repository interfaces.
+2025-09-01T11:57:53.608+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-01T11:57:53.634+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-01T11:57:53.635+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-01T11:57:53.789+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-01T11:57:53.790+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5328 ms
+2025-09-01T11:57:54.530+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-01T11:57:54.951+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-01T11:57:55.141+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-01T11:57:56.200+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-01T11:57:56.322+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-01T11:57:56.972+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@340e6174
+2025-09-01T11:57:56.979+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-01T11:57:57.142+05:30  WARN 7184 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-01T11:58:00.910+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-01T11:58:03.380+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T11:58:04.339+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-01T11:58:12.349+05:30  WARN 7184 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b3a74f02-bfc4-4948-a2c4-181e408b059c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-01T11:58:12.406+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-01T11:58:12.698+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-01T11:58:13.325+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-01T11:58:15.081+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-01T11:58:15.201+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-01T11:58:15.437+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-01T11:58:15.481+05:30  INFO 7184 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 28.136 seconds (process running for 30.852)
+2025-09-01T11:58:16.821+05:30  INFO 7184 --- [growthlab-backend] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-01T11:58:16.822+05:30  INFO 7184 --- [growthlab-backend] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-01T11:58:16.827+05:30  INFO 7184 --- [growthlab-backend] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-09-01T12:00:45.327+05:30  INFO 7184 --- [growthlab-backend] [http-nio-8080-exec-5] c.m.growthlab.service.CohortServiceImpl  : Retrieving all cohorts from database
+2025-09-01T12:00:45.327+05:30  INFO 7184 --- [growthlab-backend] [http-nio-8080-exec-4] c.m.growthlab.service.UserServiceImpl    : Fetching all users from database - cache miss
+2025-09-01T12:00:45.327+05:30  INFO 7184 --- [growthlab-backend] [http-nio-8080-exec-6] c.m.g.service.ProgramServiceImpl         : Fetching all programs
+2025-09-01T12:00:45.422+05:30  INFO 7184 --- [growthlab-backend] [http-nio-8080-exec-5] c.m.growthlab.service.CohortServiceImpl  : Successfully retrieved 0 cohorts
+2025-09-01T12:00:45.428+05:30  INFO 7184 --- [growthlab-backend] [http-nio-8080-exec-6] c.m.g.service.ProgramServiceImpl         : Successfully fetched 0 programs in 100ms
+2025-09-01T12:24:47.294+05:30  WARN 7184 --- [growthlab-backend] [http-nio-8080-exec-3] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [186] milliseconds.
+2025-09-01T12:44:13.339+05:30  INFO 7184 --- [growthlab-backend] [RMI TCP Connection(54)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-09-01T12:44:16.261+05:30  INFO 7184 --- [growthlab-backend] [RMI TCP Connection(54)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-01T12:44:16.592+05:30  INFO 7184 --- [growthlab-backend] [RMI TCP Connection(54)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-01T12:44:16.625+05:30  INFO 7184 --- [growthlab-backend] [RMI TCP Connection(54)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
