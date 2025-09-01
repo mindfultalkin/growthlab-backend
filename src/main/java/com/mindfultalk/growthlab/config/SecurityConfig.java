@@ -58,6 +58,7 @@ public class SecurityConfig {
                         "https://d1vbbqq0bbf3hp.cloudfront.net/", // CloudFront Mindful User Frontend
                         "https://dqbr334ijyl49.cloudfront.net/", // CloudFront Mindful Admin Frontend
                         "http://mft-growthlab-backend-prod-alb-324963082.ap-south-1.elb.amazonaws.com", //ECS Domain
+                        "http://mft-growthlab-backend-prod-alb-324963082.ap-south-1.elb.amazonaws.com/", //ECS Domain
                         "https://paymentpage-nine.vercel.app/" // Razorpay payment page
                     ));
                     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
