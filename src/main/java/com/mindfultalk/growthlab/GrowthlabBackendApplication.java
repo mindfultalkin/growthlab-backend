@@ -13,5 +13,4 @@ public class GrowthlabBackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GrowthlabBackendApplication.class, args);
 	}
-
 }
