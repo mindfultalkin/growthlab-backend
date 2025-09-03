@@ -59,7 +59,10 @@ public class SecurityConfig {
                         "https://dqbr334ijyl49.cloudfront.net/", // CloudFront Mindful Admin Frontend
                         "http://mft-growthlab-backend-prod-alb-324963082.ap-south-1.elb.amazonaws.com", //ECS Domain
                         "http://mft-growthlab-backend-prod-alb-324963082.ap-south-1.elb.amazonaws.com/", //ECS Domain
-                        "https://paymentpage-nine.vercel.app/" // Razorpay payment page
+                        "https://paymentpage-nine.vercel.app/", // Razorpay payment page
+                        "https://courses-api.mindfultalk.in",
+                        "https://courses-admin.mindfultalk.in",
+                        "https://courses.mindfultalk.in"
                     ));
                     config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                     config.setAllowedHeaders(List.of("*"));
