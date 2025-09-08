@@ -1,21 +1,17 @@
 package com.mindfultalk.growthlab.service;
 
 import java.util.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-
 import com.mindfultalk.growthlab.model.*;
 import com.mindfultalk.growthlab.repository.*;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 
@@ -69,8 +65,8 @@ public class EmailService {
                     "<p>If you have any questions or require assistance, feel free to reach out.</p>" +
                     "<p>Thank you for your time and support in guiding the learners.</p>" +
                     "<p>Best regards,<br>" +
-                    "Team Chippersage<br>" +
-                    "support@thechippersage.com</p>" +
+                    "The Mindfultalk Team<br>" +
+                    "support@mindfultalk.in</p>" +
                     "</body></html>";
 
             MimeMessage message = mailSender.createMimeMessage();
@@ -154,7 +150,8 @@ public class EmailService {
                 "7. **Important:** In the **'CorrectedFileAttached'** column, mark **'YES'** if a corrected file is attached, otherwise mark **'NO'**.\n\n" +
                 "Please complete your reviews within 3 business days. Your thoughtful feedback is essential to our learners' growth and success.\n\n" +
                 "Thank you for your dedication to our learners' development.\n\n" +
-                "Best regards,\nChippersage Team";
+                "Best regards,\n" +
+                "The Mindfultalk Team";
             
             helper.setText(emailBody);
             
@@ -175,7 +172,7 @@ public class EmailService {
         return userRepository.findByUserEmail(userEmail)
                 .map(User::getOrganization)
                 .map(Organization::getOrganizationAdminEmail)
-                .orElse("support@thechippersage.com");
+                .orElse("support@mindfultalk.in");
     }
 
     
@@ -193,21 +190,38 @@ public class EmailService {
             }
         }
         
-        String body = "Dear " + userName + ",\n\n"
-                + "We are excited to welcome you to the following programs and cohorts as part of your learning journey:\n\n"
-                + programCohortDetails
-                + "To get started, please find your login credentials below:\n\n"
-                + "User ID: " + userId + "\n"
-                + "Password: " + plainPassword + "\n"
-                + "User Type: " + userType + "\n\n"
-                + "You can log in to the learning portal using the following link:\n"
-                + "https://flowofenglish.thechippersage.com\n\n"
-                + "If you have any questions or need assistance, please feel free to reach out to your organization administrator:\n"
-                + "Administrator Email: " + orgAdminEmail + "\n"
-                + "Organization Name: " + orgName + "\n\n"
-                + "We are thrilled to have you onboard and look forward to your achievements in these programs. Let’s get started and make the most of this learning experience together!\n\n"
-                + "Best regards,\n"
-                + "Team Chippersage\n";
+        String body =
+        	    "Dear " + userName + ",\n\n" +
+        	    "🌱 Welcome to your transformative learning journey with **Mindfultalk**!\n\n" +
+        	    "We’re excited to confirm your enrollment in the following program(s):\n\n" +
+        	    programCohortDetails + "\n\n" +
+
+        	    "🔑 **Your Login Credentials**\n" +
+        	    "• User ID: " + userId + "\n" +
+        	    "• Password: " + plainPassword + "\n" +
+        	    "• User Type: " + userType + "\n\n" +
+        	    "👉 Access your personal learning portal here: https://courses.mindfultalk.in\n" +
+        	    "💡 Pro Tip: Bookmark this link for quick access anytime.\n\n" +
+
+        	    "🤝 **Need Support?**\n" +
+        	    "Our team is here whenever you need us:\n" +
+        	    "• Administrator: " + orgAdminEmail + "\n" +
+        	    "• Organization: " + orgName + "\n\n" +
+        	    "Got questions or technical issues? Just reach out—we’ve got you covered.\n\n" +
+
+        	    "🚀 **Next Steps**\n" +
+        	    "1. Log in to your portal using the credentials above\n" +
+        	    "2. Explore your enrolled programs and course materials\n" +
+        	    "3. Connect with fellow learners in your cohort\n" +
+        	    "4. Begin your first module and kick-start your journey\n\n" +
+
+        	    "This is more than just a course—it’s your opportunity to unlock potential, build valuable skills, and achieve your goals. Remember, we’re here to support you every step of the way.\n\n" +
+        	    "We can’t wait to celebrate your progress and growth! 🎉\n\n" +
+
+        	    "Warm regards,\n\n" +
+        	    "The Mindfultalk Team\n" +
+        	    "Empowering Growth, One Mind at a Time\n\n" +
+        	    "P.S. Keep an eye on your inbox for course updates, learning tips, and inspiring success stories from your fellow learners.";
 
         sendEmail(userEmail, subject, body);
     }
@@ -227,7 +241,7 @@ public class EmailService {
                         + "👉 **Cohort Name**: " + cohortName + "\n\n"
                         + "This program is designed to help you grow, connect, and achieve your goals. We're confident that you'll find it both enriching and inspiring. 🎯\n\n"
                         + "Ready to get started? Simply log in to your account here:\n"
-                        + "[Access Your Program](https://flowofenglish.thechippersage.com)\n\n"
+                        + "[Access Your Program](https://courses.mindfultalk.in)\n\n"
                         + "Take this opportunity to:\n"
                         + "✅ Dive into new program content\n"
                         + "✅ Collaborate with your cohort members\n"
@@ -235,7 +249,7 @@ public class EmailService {
                         + "Your growth matters to us, and we’re here to support you every step of the way. If you have any questions, feel free to reach out—we’ve got your back! 💪\n\n"
                         + "Let’s make this an amazing chapter in your learning journey.\n\n"
                         + "Warm regards,\n"
-                        + "Team Chippersage\n\n"
+                        + "The Mindfultalk Team\n\n"
                         + "P.S. Remember, every step you take is one closer to achieving your goals. Let’s do this together! 🚀";
 
         try {
@@ -310,7 +324,7 @@ public class EmailService {
             bodyBuilder.append("Keep up the great work! Your dedication to learning is commendable.\n\n");
             bodyBuilder.append("If you have any questions about your evaluation, please feel free to reach out to your mentor.\n\n");
             bodyBuilder.append("Best regards,\n");
-            bodyBuilder.append("Team Chippersage");
+            bodyBuilder.append("The Mindfultalk Team");
             
             // Send the email
             sendEmail(userEmail, subject, bodyBuilder.toString());

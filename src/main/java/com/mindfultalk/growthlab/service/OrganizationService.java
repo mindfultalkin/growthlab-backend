@@ -15,7 +15,7 @@ public interface OrganizationService {
     Organization createOrganization(Organization organization);
     Organization updateOrganization(String organizationId, Organization updatedOrganization);
     void deleteOrganization(String organizationId);
-    
+    void hardDeleteOrganization(String organizationId);
     // Bulk operations
     List<Organization> createOrganizations(List<Organization> organizations);
     

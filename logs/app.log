@@ -162,3 +162,968 @@ This generated password is for development use only. Your security configuration
 2025-09-08T11:50:46.215+05:30  INFO 6924 --- [growthlab-backend] [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-09-08T11:50:46.326+05:30  INFO 6924 --- [growthlab-backend] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-09-08T11:50:46.341+05:30  INFO 6924 --- [growthlab-backend] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-08T11:50:47.419+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 6924 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T11:50:47.420+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T11:50:51.527+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T11:50:51.528+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T11:50:51.624+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 20 JPA repository interfaces.
+2025-09-08T11:50:52.699+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T11:50:52.701+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T11:50:52.701+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T11:50:52.776+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T11:50:52.777+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5352 ms
+2025-09-08T11:50:52.957+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T11:50:52.963+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T11:50:52.996+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T11:50:52.998+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-09-08T11:50:53.084+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@63ba2246
+2025-09-08T11:50:53.085+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-09-08T11:50:53.111+05:30  WARN 6924 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T11:50:53.740+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T11:50:55.648+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T11:50:56.706+05:30  WARN 6924 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: bb4394dc-44ab-47c6-a88c-0eeb4618ee64
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T11:50:56.709+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T11:50:56.743+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T11:50:57.012+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T11:50:57.398+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T11:50:57.420+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T11:50:57.493+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T11:50:57.518+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 10.16 seconds (process running for 3782.773)
+2025-09-08T11:50:57.526+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T11:51:14.336+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08T11:51:14.336+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-08T11:51:14.340+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-09-08T11:51:14.363+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-2] c.m.g.service.SubconceptServiceImpl      : Starting CSV upload process for file: SUB - testing cloud front sub links.csv
+2025-09-08T11:51:14.402+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-2] c.m.g.service.SubconceptServiceImpl      : CSV Header mapping: {concept_id=10, show_to=2, subconceptgroup=5, subconcept_group=5, duration=12, subconcept_maxscore=9, showto=2, subconceptduration=12, subconcept_link=6, subconcept_type=7, subconceptmaxscore=9, numquestions=8, dependency=1, subconcept_desc_2=4, content_id=11, contentid=11, subconceptid=0, subconcept_desc=3, subconceptlink=6, subconceptdesc2=4, subconcepttype=7, subconceptdesc=3, num_questions=8, conceptid=10, subconcept_id=0}
+2025-09-08T11:51:15.008+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23502
+2025-09-08T11:51:15.009+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: null value in column "subconcept_type" of relation "subconcepts" violates not-null constraint
+  Detail: Failing row contains (SC1029, null, 0, Learner,Mentor, Watch: TEDx : Context is everything: [Watch the first 4 mins ], null, 918, null, https://www.youtube.com/embed/wSV_YbUWQMk?si=PgnW2shWx-btDQJL, 2, null, 0280caff-091c-46d4-9c84-ff10592c0a99, C506, 5003).
+2025-09-08T11:51:15.067+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-2] c.m.g.service.SubconceptServiceImpl      : Line 31: Unexpected error - could not execute statement [ERROR: null value in column "subconcept_type" of relation "subconcepts" violates not-null constraint
+  Detail: Failing row contains (SC1029, null, 0, Learner,Mentor, Watch: TEDx : Context is everything: [Watch the first 4 mins ], null, 918, null, https://www.youtube.com/embed/wSV_YbUWQMk?si=PgnW2shWx-btDQJL, 2, null, 0280caff-091c-46d4-9c84-ff10592c0a99, C506, 5003).] [insert into subconcepts (concept_id,content_id,dependency,num_questions,show_to,subconcept_desc,subconcept_desc_2,subconcept_duration,subconcept_group,subconcept_link,subconcept_maxscore,subconcept_type,uuid,subconcept_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into subconcepts (concept_id,content_id,dependency,num_questions,show_to,subconcept_desc,subconcept_desc_2,subconcept_duration,subconcept_group,subconcept_link,subconcept_maxscore,subconcept_type,uuid,subconcept_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [subconcept_type" of relation "subconcepts]
+2025-09-08T11:51:15.067+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-2] c.m.g.service.SubconceptServiceImpl      : Error processing line 31: could not execute statement [ERROR: null value in column "subconcept_type" of relation "subconcepts" violates not-null constraint
+  Detail: Failing row contains (SC1029, null, 0, Learner,Mentor, Watch: TEDx : Context is everything: [Watch the first 4 mins ], null, 918, null, https://www.youtube.com/embed/wSV_YbUWQMk?si=PgnW2shWx-btDQJL, 2, null, 0280caff-091c-46d4-9c84-ff10592c0a99, C506, 5003).] [insert into subconcepts (concept_id,content_id,dependency,num_questions,show_to,subconcept_desc,subconcept_desc_2,subconcept_duration,subconcept_group,subconcept_link,subconcept_maxscore,subconcept_type,uuid,subconcept_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into subconcepts (concept_id,content_id,dependency,num_questions,show_to,subconcept_desc,subconcept_desc_2,subconcept_duration,subconcept_group,subconcept_link,subconcept_maxscore,subconcept_type,uuid,subconcept_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [subconcept_type" of relation "subconcepts]
+
+org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: null value in column "subconcept_type" of relation "subconcepts" violates not-null constraint
+  Detail: Failing row contains (SC1029, null, 0, Learner,Mentor, Watch: TEDx : Context is everything: [Watch the first 4 mins ], null, 918, null, https://www.youtube.com/embed/wSV_YbUWQMk?si=PgnW2shWx-btDQJL, 2, null, 0280caff-091c-46d4-9c84-ff10592c0a99, C506, 5003).] [insert into subconcepts (concept_id,content_id,dependency,num_questions,show_to,subconcept_desc,subconcept_desc_2,subconcept_duration,subconcept_group,subconcept_link,subconcept_maxscore,subconcept_type,uuid,subconcept_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into subconcepts (concept_id,content_id,dependency,num_questions,show_to,subconcept_desc,subconcept_desc_2,subconcept_duration,subconcept_group,subconcept_link,subconcept_maxscore,subconcept_type,uuid,subconcept_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [subconcept_type" of relation "subconcepts]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:290) ~[spring-orm-6.1.20.jar:6.1.20]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241) ~[spring-orm-6.1.20.jar:6.1.20]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:566) ~[spring-orm-6.1.20.jar:6.1.20]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.1.20.jar:6.1.20]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.1.20.jar:6.1.20]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:663) ~[spring-tx-6.1.20.jar:6.1.20]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:413) ~[spring-tx-6.1.20.jar:6.1.20]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.20.jar:6.1.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.20.jar:6.1.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.3.12.jar:3.3.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.20.jar:6.1.20]
+	at jdk.proxy6/jdk.proxy6.$Proxy259.save(Unknown Source) ~[na:na]
+	at com.mindfultalk.growthlab.service.SubconceptServiceImpl.uploadSubconceptsCSV(SubconceptServiceImpl.java:294) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:769) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:55) ~[spring-context-6.1.20.jar:6.1.20]
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:416) ~[spring-context-6.1.20.jar:6.1.20]
+	at org.springframework.cache.interceptor.CacheAspectSupport.evaluate(CacheAspectSupport.java:551) ~[spring-context-6.1.20.jar:6.1.20]
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:433) ~[spring-context-6.1.20.jar:6.1.20]
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:395) ~[spring-context-6.1.20.jar:6.1.20]
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:65) ~[spring-context-6.1.20.jar:6.1.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:769) ~[spring-aop-6.1.20.jar:6.1.20]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:721) ~[spring-aop-6.1.20.jar:6.1.20]
+	at com.mindfultalk.growthlab.service.SubconceptServiceImpl$$SpringCGLIB$$0.uploadSubconceptsCSV(<generated>) ~[classes/:na]
+	at com.mindfultalk.growthlab.controller.SubconceptController.uploadSubconcepts(SubconceptController.java:43) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.20.jar:6.1.20]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.20.jar:6.1.20]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.20.jar:6.1.20]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.20.jar:6.1.20]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.20.jar:6.1.20]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.20.jar:6.1.20]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.20.jar:6.1.20]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.20.jar:6.1.20]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.41.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.20.jar:6.1.20]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.41.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at com.mindfultalk.growthlab.filter.SessionValidationFilter.doFilter(SessionValidationFilter.java:127) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at com.mindfultalk.growthlab.filter.SwaggerAuthFilter.doFilterInternal(SwaggerAuthFilter.java:37) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.9.jar:6.3.9]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.20.jar:6.1.20]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.9.jar:6.3.9]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.20.jar:6.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: null value in column "subconcept_type" of relation "subconcepts" violates not-null constraint
+  Detail: Failing row contains (SC1029, null, 0, Learner,Mentor, Watch: TEDx : Context is everything: [Watch the first 4 mins ], null, 918, null, https://www.youtube.com/embed/wSV_YbUWQMk?si=PgnW2shWx-btDQJL, 2, null, 0280caff-091c-46d4-9c84-ff10592c0a99, C506, 5003).] [insert into subconcepts (concept_id,content_id,dependency,num_questions,show_to,subconcept_desc,subconcept_desc_2,subconcept_duration,subconcept_group,subconcept_link,subconcept_maxscore,subconcept_type,uuid,subconcept_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:104) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:110) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:633) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:500) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:385) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:487) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2324) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1981) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.1.20.jar:6.1.20]
+	... 169 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: null value in column "subconcept_type" of relation "subconcepts" violates not-null constraint
+  Detail: Failing row contains (SC1029, null, 0, Learner,Mentor, Watch: TEDx : Context is everything: [Watch the first 4 mins ], null, 918, null, https://www.youtube.com/embed/wSV_YbUWQMk?si=PgnW2shWx-btDQJL, 2, null, 0280caff-091c-46d4-9c84-ff10592c0a99, C506, 5003).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194) ~[postgresql-42.7.5.jar:42.7.5]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155) ~[postgresql-42.7.5.jar:42.7.5]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	... 190 common frames omitted
+
+2025-09-08T11:51:15.595+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-2] c.m.g.service.SubconceptServiceImpl      : CSV upload completed. Created: 57, Failed: 1
+2025-09-08T11:52:51.727+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Starting CSV upload process for file: SUB - testing cloud front sub links.csv
+2025-09-08T11:52:51.764+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : CSV Header mapping: {concept_id=10, show_to=2, subconceptgroup=5, subconcept_group=5, duration=12, subconcept_maxscore=9, showto=2, subconceptduration=12, subconcept_link=6, subconcept_type=7, subconceptmaxscore=9, numquestions=8, dependency=1, subconcept_desc_2=4, content_id=11, contentid=11, subconceptid=0, subconcept_desc=3, subconceptlink=6, subconceptdesc2=4, subconcepttype=7, subconceptdesc=3, num_questions=8, conceptid=10, subconcept_id=0}
+2025-09-08T11:52:51.770+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 2: SubconceptId SC1001 already exists
+2025-09-08T11:52:51.772+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 3: SubconceptId SC1002 already exists
+2025-09-08T11:52:51.774+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 4: SubconceptId SC1003 already exists
+2025-09-08T11:52:51.776+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 5: SubconceptId SC1004 already exists
+2025-09-08T11:52:51.778+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 6: SubconceptId SC1005 already exists
+2025-09-08T11:52:51.787+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 7: SubconceptId SC1006 already exists
+2025-09-08T11:52:51.789+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 8: SubconceptId SC1007 already exists
+2025-09-08T11:52:51.791+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 9: SubconceptId SC1008 already exists
+2025-09-08T11:52:51.793+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 10: SubconceptId SC1009 already exists
+2025-09-08T11:52:51.795+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 11: SubconceptId SC1010 already exists
+2025-09-08T11:52:51.797+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 12: SubconceptId SC1011 already exists
+2025-09-08T11:52:51.800+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 13: SubconceptId SC1012 already exists
+2025-09-08T11:52:51.802+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 14: SubconceptId SC1013 already exists
+2025-09-08T11:52:51.804+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 15: SubconceptId SC1014 already exists
+2025-09-08T11:52:51.806+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 16: SubconceptId SC1015 already exists
+2025-09-08T11:52:51.807+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 17: SubconceptId SC1015-1 already exists
+2025-09-08T11:52:51.809+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 18: SubconceptId SC1016 already exists
+2025-09-08T11:52:51.811+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 19: SubconceptId SC1017 already exists
+2025-09-08T11:52:51.813+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 20: SubconceptId SC1018 already exists
+2025-09-08T11:52:51.816+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 21: SubconceptId SC1018-1 already exists
+2025-09-08T11:52:51.819+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 22: SubconceptId SC1019 already exists
+2025-09-08T11:52:51.822+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 23: SubconceptId SC1021 already exists
+2025-09-08T11:52:51.824+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 24: SubconceptId SC1022 already exists
+2025-09-08T11:52:51.826+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 25: SubconceptId SC1023 already exists
+2025-09-08T11:52:51.829+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 26: SubconceptId SC1024 already exists
+2025-09-08T11:52:51.831+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 27: SubconceptId SC1025 already exists
+2025-09-08T11:52:51.833+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 28: SubconceptId SC1026 already exists
+2025-09-08T11:52:51.835+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 29: SubconceptId SC1027 already exists
+2025-09-08T11:52:51.837+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 30: SubconceptId SC1028 already exists
+2025-09-08T11:52:51.851+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 32: SubconceptId SC1030 already exists
+2025-09-08T11:52:51.853+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 33: SubconceptId SC1031 already exists
+2025-09-08T11:52:51.855+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 34: SubconceptId SC1032 already exists
+2025-09-08T11:52:51.856+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 35: SubconceptId SC1033 already exists
+2025-09-08T11:52:51.858+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 36: SubconceptId SC1034 already exists
+2025-09-08T11:52:51.860+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 37: SubconceptId SC1035 already exists
+2025-09-08T11:52:51.863+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 38: SubconceptId SC1036 already exists
+2025-09-08T11:52:51.865+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 39: SubconceptId SC1037 already exists
+2025-09-08T11:52:51.866+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 40: SubconceptId SC1039 already exists
+2025-09-08T11:52:51.868+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 41: SubconceptId SC1040 already exists
+2025-09-08T11:52:51.870+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 42: SubconceptId SC1041 already exists
+2025-09-08T11:52:51.872+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 43: SubconceptId SC1042 already exists
+2025-09-08T11:52:51.874+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 44: SubconceptId SC1043 already exists
+2025-09-08T11:52:51.876+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 45: SubconceptId SC1044 already exists
+2025-09-08T11:52:51.878+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 46: SubconceptId SC1045 already exists
+2025-09-08T11:52:51.880+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 47: SubconceptId SC1046 already exists
+2025-09-08T11:52:51.882+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 48: SubconceptId SC1047 already exists
+2025-09-08T11:52:51.884+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 49: SubconceptId SC1048 already exists
+2025-09-08T11:52:51.886+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 50: SubconceptId SC1049 already exists
+2025-09-08T11:52:51.888+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 51: SubconceptId SC1051 already exists
+2025-09-08T11:52:51.890+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 52: SubconceptId SC1052 already exists
+2025-09-08T11:52:51.892+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 53: SubconceptId SC1056 already exists
+2025-09-08T11:52:51.896+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 54: SubconceptId SC1058 already exists
+2025-09-08T11:52:51.901+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 55: SubconceptId SC1059 already exists
+2025-09-08T11:52:51.903+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 56: SubconceptId SC1060 already exists
+2025-09-08T11:52:51.907+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 57: SubconceptId SC1061 already exists
+2025-09-08T11:52:51.910+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 58: SubconceptId SC1062 already exists
+2025-09-08T11:52:51.912+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : Line 59: SubconceptId SC1063 already exists
+2025-09-08T11:52:51.912+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.g.service.SubconceptServiceImpl      : CSV upload completed. Created: 1, Failed: 57
+2025-09-08T12:05:36.580+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-7] c.m.g.service.ProgramServiceImpl         : Starting CSV upload for programs. File: program.csv, Size: 203 bytes
+2025-09-08T12:05:36.604+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-7] c.m.g.service.ProgramServiceImpl         : Processing 1 records from CSV file
+2025-09-08T12:05:36.636+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-7] c.m.g.service.ProgramServiceImpl         : Completed CSV upload for programs in 55ms. Created: 1, Failed: 0, Total processed: 1
+2025-09-08T12:21:43.200+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-1] c.m.growthlab.service.StageServiceImpl   : Starting CSV upload process for file: stage.csv
+2025-09-08T12:21:43.228+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-1] c.m.growthlab.service.StageServiceImpl   : Skipping header row: stageId,stageName,stageDesc,programId
+2025-09-08T12:21:43.357+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-1] c.m.growthlab.service.StageServiceImpl   : CSV upload completed. Success: 6, Failed: 0, Total processed: 6
+2025-09-08T12:23:48.065+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-4] c.m.growthlab.service.UnitServiceImpl    : Starting bulk upload of units
+2025-09-08T12:23:48.329+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-4] c.m.growthlab.service.UnitServiceImpl    : Bulk upload completed - Success: 14, Failed: 0
+2025-09-08T12:30:36.630+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Starting bulk upload process for file: Pgm - cc-3 pgm mis.csv
+2025-09-08T12:30:36.774+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : CSV headers validation passed, processing records
+2025-09-08T12:30:37.137+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1038
+2025-09-08T12:30:37.137+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 26: Subconcept not found: SC1038
+2025-09-08T12:30:37.181+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1020
+2025-09-08T12:30:37.181+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 37: Subconcept not found: SC1020
+2025-09-08T12:30:37.252+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1050
+2025-09-08T12:30:37.252+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 52: Subconcept not found: SC1050
+2025-09-08T12:30:37.253+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1053
+2025-09-08T12:30:37.254+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 53: Subconcept not found: SC1053
+2025-09-08T12:30:37.255+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1054
+2025-09-08T12:30:37.255+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 54: Subconcept not found: SC1054
+2025-09-08T12:30:37.256+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1055
+2025-09-08T12:30:37.257+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 55: Subconcept not found: SC1055
+2025-09-08T12:30:37.273+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1057
+2025-09-08T12:30:37.273+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 59: Subconcept not found: SC1057
+2025-09-08T12:30:37.291+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : CSV processing failed with 7 failed rows. Rolling back.
+2025-09-08T12:30:37.300+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.g.s.ProgramConceptsMappingServiceImpl : Bulk upload exception: CSV processing failed with 7 failed rows. Rolling back.
+2025-09-08T12:30:37.338+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mindfultalk.growthlab.exception.BulkUploadException: CSV processing failed with 7 failed rows. Rolling back.]
+2025-09-08T12:38:17.286+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Starting bulk upload process for file: Pgm - cc-3 pgm mis.csv
+2025-09-08T12:38:17.312+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : CSV headers validation passed, processing records
+2025-09-08T12:38:17.401+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1038
+2025-09-08T12:38:17.401+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 26: Subconcept not found: SC1038
+2025-09-08T12:38:17.429+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1020
+2025-09-08T12:38:17.429+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 37: Subconcept not found: SC1020
+2025-09-08T12:38:17.466+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1050
+2025-09-08T12:38:17.466+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 52: Subconcept not found: SC1050
+2025-09-08T12:38:17.467+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1053
+2025-09-08T12:38:17.468+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 53: Subconcept not found: SC1053
+2025-09-08T12:38:17.469+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1054
+2025-09-08T12:38:17.469+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 54: Subconcept not found: SC1054
+2025-09-08T12:38:17.471+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1055
+2025-09-08T12:38:17.471+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 55: Subconcept not found: SC1055
+2025-09-08T12:38:17.482+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1057
+2025-09-08T12:38:17.482+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 59: Subconcept not found: SC1057
+2025-09-08T12:38:17.498+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : CSV processing failed with 7 failed rows. Rolling back.
+2025-09-08T12:38:17.498+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.g.s.ProgramConceptsMappingServiceImpl : Bulk upload exception: CSV processing failed with 7 failed rows. Rolling back.
+2025-09-08T12:38:17.513+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mindfultalk.growthlab.exception.BulkUploadException: CSV processing failed with 7 failed rows. Rolling back.]
+2025-09-08T12:38:22.489+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Starting bulk upload process for file: Pgm - cc-3 pgm mis.csv
+2025-09-08T12:38:22.492+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : CSV headers validation passed, processing records
+2025-09-08T12:38:22.566+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1038
+2025-09-08T12:38:22.566+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 26: Subconcept not found: SC1038
+2025-09-08T12:38:22.601+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1020
+2025-09-08T12:38:22.602+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 37: Subconcept not found: SC1020
+2025-09-08T12:38:22.654+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1050
+2025-09-08T12:38:22.655+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 52: Subconcept not found: SC1050
+2025-09-08T12:38:22.656+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1053
+2025-09-08T12:38:22.656+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 53: Subconcept not found: SC1053
+2025-09-08T12:38:22.658+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1054
+2025-09-08T12:38:22.658+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 54: Subconcept not found: SC1054
+2025-09-08T12:38:22.659+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1055
+2025-09-08T12:38:22.659+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 55: Subconcept not found: SC1055
+2025-09-08T12:38:22.677+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1057
+2025-09-08T12:38:22.678+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 59: Subconcept not found: SC1057
+2025-09-08T12:38:22.699+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : CSV processing failed with 7 failed rows. Rolling back.
+2025-09-08T12:38:22.700+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.g.s.ProgramConceptsMappingServiceImpl : Bulk upload exception: CSV processing failed with 7 failed rows. Rolling back.
+2025-09-08T12:38:22.703+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mindfultalk.growthlab.exception.BulkUploadException: CSV processing failed with 7 failed rows. Rolling back.]
+2025-09-08T12:39:40.196+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Starting bulk upload process for file: Pgm - cc-3 pgm mis.csv
+2025-09-08T12:39:40.198+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : CSV headers validation passed, processing records
+2025-09-08T12:39:40.276+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1038
+2025-09-08T12:39:40.276+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 26: Subconcept not found: SC1038
+2025-09-08T12:39:40.306+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1020
+2025-09-08T12:39:40.307+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 37: Subconcept not found: SC1020
+2025-09-08T12:39:40.350+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1050
+2025-09-08T12:39:40.350+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 52: Subconcept not found: SC1050
+2025-09-08T12:39:40.351+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1053
+2025-09-08T12:39:40.352+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 53: Subconcept not found: SC1053
+2025-09-08T12:39:40.352+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1054
+2025-09-08T12:39:40.353+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 54: Subconcept not found: SC1054
+2025-09-08T12:39:40.354+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1055
+2025-09-08T12:39:40.354+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 55: Subconcept not found: SC1055
+2025-09-08T12:39:40.364+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Subconcept not found: SC1057
+2025-09-08T12:39:40.364+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Resource not found error in row 59: Subconcept not found: SC1057
+2025-09-08T12:39:40.386+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : CSV processing failed with 7 failed rows. Rolling back.
+2025-09-08T12:39:40.386+05:30 ERROR 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.g.s.ProgramConceptsMappingServiceImpl : Bulk upload exception: CSV processing failed with 7 failed rows. Rolling back.
+2025-09-08T12:39:40.388+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mindfultalk.growthlab.exception.BulkUploadException: CSV processing failed with 7 failed rows. Rolling back.]
+2025-09-08T12:43:59.487+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-6] .m.g.s.ProgramConceptsMappingServiceImpl : Starting bulk upload process for file: Pgm - cc-3 pgm mis.csv
+2025-09-08T12:43:59.515+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-6] .m.g.s.ProgramConceptsMappingServiceImpl : CSV headers validation passed, processing records
+2025-09-08T12:43:59.727+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-6] .m.g.s.ProgramConceptsMappingServiceImpl : Bulk upload completed successfully. Success count: 58, Fail count: 0
+2025-09-08T13:01:30.687+05:30  WARN 6924 --- [growthlab-backend] [http-nio-8081-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.QueryTimeoutException: Redis command timed out]
+2025-09-08T13:01:32.119+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-3] c.m.growthlab.service.CohortServiceImpl  : Retrieving cohorts for organization ID: CHIP
+2025-09-08T13:01:32.122+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-4] c.m.growthlab.service.UserServiceImpl    : Fetching users by organization ID from database - cache miss: CHIP
+2025-09-08T13:01:33.247+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-3] c.m.growthlab.service.CohortServiceImpl  : Successfully retrieved 0 cohorts for organization ID: CHIP
+2025-09-08T13:03:11.552+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-5] c.m.growthlab.service.CohortServiceImpl  : Creating new cohort
+2025-09-08T13:03:11.725+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-5] c.m.growthlab.service.CohortServiceImpl  : Successfully created cohort with ID: PROF-CHIP-1 for organization: CHIP
+2025-09-08T13:03:11.793+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.growthlab.service.CohortServiceImpl  : Retrieving cohorts for organization ID: CHIP
+2025-09-08T13:03:11.816+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.growthlab.service.CohortServiceImpl  : Successfully retrieved 1 cohorts for organization ID: CHIP
+2025-09-08T13:03:31.456+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-4] c.m.g.service.CohortProgramServiceImpl   : Creating new cohort program
+2025-09-08T13:03:31.582+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-4] c.m.g.service.CohortProgramServiceImpl   : Successfully created cohort program with ID: 1 for cohort ID: PROF-CHIP-1
+2025-09-08T13:14:19.558+05:30  INFO 6924 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-08T13:14:21.201+05:30  INFO 6924 --- [growthlab-backend] [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T13:14:21.335+05:30  INFO 6924 --- [growthlab-backend] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-09-08T13:14:21.399+05:30  INFO 6924 --- [growthlab-backend] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-09-08T13:14:24.586+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 6924 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T13:14:24.587+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T13:14:27.109+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T13:14:27.110+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T13:14:27.216+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 20 JPA repository interfaces.
+2025-09-08T13:14:28.819+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T13:14:28.822+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T13:14:28.822+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T13:14:28.897+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T13:14:28.897+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4284 ms
+2025-09-08T13:14:29.191+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T13:14:29.202+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T13:14:29.241+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T13:14:29.244+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-09-08T13:14:29.354+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@3db73f3
+2025-09-08T13:14:29.355+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-09-08T13:14:29.378+05:30  WARN 6924 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T13:14:30.060+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T13:14:32.296+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T13:14:35.129+05:30  WARN 6924 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4b8e0648-3188-4721-b0f4-96daba258ea3
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T13:14:35.133+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T13:14:35.175+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T13:14:35.608+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T13:14:36.410+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T13:14:36.439+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T13:14:36.549+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T13:14:36.606+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 12.424 seconds (process running for 8803.248)
+2025-09-08T13:14:36.611+05:30  INFO 6924 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T13:15:22.164+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08T13:15:22.164+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-08T13:15:22.170+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-09-08T13:15:22.796+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-3] c.m.growthlab.service.EmailService       : Attempting to send email to: seema.albal@mindfultalk.in
+2025-09-08T13:15:22.797+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-3] c.m.growthlab.service.EmailService       : Email content prepared. Subject: Welcome to Your Learning Journey!
+2025-09-08T13:15:28.207+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-3] c.m.growthlab.service.EmailService       : Email successfully sent to: seema.albal@mindfultalk.in
+2025-09-08T13:15:28.651+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-2] c.m.growthlab.service.UserServiceImpl    : Fetching users by organization ID from database - cache miss: CHIP
+2025-09-08T13:22:49.016+05:30  WARN 6924 --- [growthlab-backend] [HikariPool-3 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=49s438ms843µs600ns).
+2025-09-08T13:23:18.261+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-4] c.m.growthlab.service.UserServiceImpl    : Fetching all users from database - cache miss
+2025-09-08T13:23:18.263+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-5] c.m.growthlab.service.CohortServiceImpl  : Retrieving all cohorts from database
+2025-09-08T13:23:18.269+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-5] c.m.growthlab.service.CohortServiceImpl  : Successfully retrieved 1 cohorts
+2025-09-08T13:23:18.274+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-2] c.m.g.service.ProgramServiceImpl         : Fetching all programs
+2025-09-08T13:23:18.277+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-2] c.m.g.service.ProgramServiceImpl         : Successfully fetched 1 programs in 3ms
+2025-09-08T13:23:53.552+05:30  INFO 6924 --- [growthlab-backend] [http-nio-8081-exec-7] c.m.growthlab.service.UserServiceImpl    : Fetching all users from database - cache miss
+2025-09-08T13:41:06.986+05:30  INFO 6924 --- [growthlab-backend] [RMI TCP Connection(180)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-09-08T13:41:08.202+05:30  INFO 6924 --- [growthlab-backend] [RMI TCP Connection(180)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T13:41:08.278+05:30  INFO 6924 --- [growthlab-backend] [RMI TCP Connection(180)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-09-08T13:41:08.309+05:30  INFO 6924 --- [growthlab-backend] [RMI TCP Connection(180)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-09-08T14:29:42.293+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T14:29:42.304+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T14:29:42.507+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-08T14:29:42.508+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-08T14:29:46.412+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T14:29:46.413+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T14:29:47.090+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 653 ms. Found 20 JPA repository interfaces.
+2025-09-08T14:29:50.530+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T14:29:50.585+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T14:29:50.586+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T14:29:50.752+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T14:29:50.753+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8242 ms
+2025-09-08T14:29:51.375+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T14:29:51.740+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-08T14:29:51.937+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T14:29:53.144+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T14:29:53.283+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-08T14:29:53.942+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@677502d9
+2025-09-08T14:29:53.946+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-08T14:29:54.124+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T14:29:58.280+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T14:30:00.695+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T14:30:01.475+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-08T14:30:09.473+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 587be5ef-8847-4cb7-a504-693979217de4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T14:30:09.519+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T14:30:09.823+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T14:30:10.533+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T14:30:12.121+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T14:30:12.273+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T14:30:12.503+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T14:30:12.533+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 31.56 seconds (process running for 33.953)
+2025-09-08T14:30:13.731+05:30  INFO 4308 --- [growthlab-backend] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08T14:30:13.732+05:30  INFO 4308 --- [growthlab-backend] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-08T14:30:13.739+05:30  INFO 4308 --- [growthlab-backend] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-09-08T15:05:32.101+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] c.m.g.service.ProgramServiceImpl         : Updating program with ID: PC-1
+2025-09-08T15:05:33.253+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] c.m.g.service.ProgramServiceImpl         : Successfully updated program: Professional Communication - Speak Up (ID: PC-1) in 1134ms
+2025-09-08T15:15:28.301+05:30  WARN 4308 --- [growthlab-backend] [http-nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: Cache 'organizationByEmail' does not allow 'null' values; Avoid storing null via '@Cacheable(unless="#result == null")' or configure RedisCache to allow 'null' via RedisCacheConfiguration]
+2025-09-08T15:16:58.755+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-08T15:16:59.995+05:30  INFO 4308 --- [growthlab-backend] [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T15:17:00.175+05:30  INFO 4308 --- [growthlab-backend] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-08T15:17:00.190+05:30  INFO 4308 --- [growthlab-backend] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-08T15:17:01.772+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T15:17:01.779+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T15:17:08.049+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T15:17:08.050+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T15:17:08.275+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 224 ms. Found 20 JPA repository interfaces.
+2025-09-08T15:17:11.274+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T15:17:11.280+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T15:17:11.280+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T15:17:11.486+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T15:17:11.488+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9688 ms
+2025-09-08T15:17:11.804+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T15:17:11.821+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T15:17:11.994+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T15:17:12.047+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-09-08T15:17:12.466+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@4a4c5f1c
+2025-09-08T15:17:12.470+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-09-08T15:17:12.505+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T15:17:13.688+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T15:17:16.099+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T15:17:17.424+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 73d1e240-95f0-46c9-b4ab-65879511305a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T15:17:17.428+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T15:17:17.455+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T15:17:17.686+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T15:17:18.268+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T15:17:18.294+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T15:17:18.357+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T15:17:18.380+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 16.769 seconds (process running for 2859.799)
+2025-09-08T15:17:18.386+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T15:17:19.873+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2025-09-08T15:17:20.257+05:30  INFO 4308 --- [growthlab-backend] [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T15:17:20.259+05:30  INFO 4308 --- [growthlab-backend] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-09-08T15:17:20.263+05:30  INFO 4308 --- [growthlab-backend] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-09-08T15:17:20.458+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T15:17:20.460+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T15:17:21.208+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T15:17:21.208+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T15:17:21.295+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 20 JPA repository interfaces.
+2025-09-08T15:17:21.794+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T15:17:21.795+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T15:17:21.796+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T15:17:21.856+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T15:17:21.858+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1393 ms
+2025-09-08T15:17:22.006+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T15:17:22.016+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T15:17:22.032+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T15:17:22.033+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-09-08T15:17:22.129+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@108b26a8
+2025-09-08T15:17:22.130+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-09-08T15:17:22.144+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T15:17:22.614+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T15:17:24.981+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T15:17:25.919+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 11eca70e-ea9b-4009-a9f8-db03ba5066b7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T15:17:25.923+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T15:17:25.951+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T15:17:26.184+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T15:17:26.556+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T15:17:26.578+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T15:17:26.636+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T15:17:26.655+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 6.253 seconds (process running for 2868.075)
+2025-09-08T15:17:26.660+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T15:18:06.641+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-08T15:18:07.001+05:30  INFO 4308 --- [growthlab-backend] [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T15:18:07.003+05:30  INFO 4308 --- [growthlab-backend] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-09-08T15:18:07.005+05:30  INFO 4308 --- [growthlab-backend] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-09-08T15:18:07.188+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T15:18:07.188+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T15:18:07.840+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T15:18:07.840+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T15:18:07.943+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 20 JPA repository interfaces.
+2025-09-08T15:18:08.539+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T15:18:08.540+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T15:18:08.541+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T15:18:08.598+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T15:18:08.599+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1405 ms
+2025-09-08T15:18:08.766+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T15:18:08.774+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T15:18:08.790+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T15:18:08.792+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-09-08T15:18:08.876+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@312d9341
+2025-09-08T15:18:08.877+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-09-08T15:18:08.889+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T15:18:09.376+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T15:18:12.428+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T15:18:13.299+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 457e1297-65c9-4e99-b969-27b8e953bb19
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T15:18:13.301+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T15:18:13.323+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T15:18:13.549+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T15:18:13.883+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T15:18:13.911+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T15:18:14.007+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T15:18:14.028+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 6.889 seconds (process running for 2915.449)
+2025-09-08T15:18:14.035+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T16:29:53.443+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-08T16:29:54.915+05:30  INFO 4308 --- [growthlab-backend] [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T16:29:55.063+05:30  INFO 4308 --- [growthlab-backend] [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-09-08T16:29:55.079+05:30  INFO 4308 --- [growthlab-backend] [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2025-09-08T16:29:57.067+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T16:29:57.069+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T16:29:58.317+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T16:29:58.317+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T16:29:58.421+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 20 JPA repository interfaces.
+2025-09-08T16:30:00.347+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T16:30:00.351+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T16:30:00.351+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T16:30:00.430+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T16:30:00.430+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3340 ms
+2025-09-08T16:30:00.672+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T16:30:00.678+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T16:30:00.697+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T16:30:00.700+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2025-09-08T16:30:00.904+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@1f067bc8
+2025-09-08T16:30:00.905+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2025-09-08T16:30:00.933+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T16:30:01.462+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T16:30:03.643+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T16:30:04.851+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 24a27e17-7d47-4bcb-8554-6c0552b9c267
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T16:30:04.854+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T16:30:04.882+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T16:30:05.159+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T16:30:05.574+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T16:30:05.640+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T16:30:05.706+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T16:30:05.737+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 8.928 seconds (process running for 7227.158)
+2025-09-08T16:30:05.742+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T16:34:27.887+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08T16:34:27.888+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-08T16:34:27.898+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2025-09-08T16:34:28.047+05:30  WARN 4308 --- [growthlab-backend] [http-nio-8081-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: Cache 'organizationByEmail' does not allow 'null' values; Avoid storing null via '@Cacheable(unless="#result == null")' or configure RedisCache to allow 'null' via RedisCacheConfiguration]
+2025-09-08T16:34:29.355+05:30  WARN 4308 --- [growthlab-backend] [http-nio-8081-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: Cache 'organizationByEmail' does not allow 'null' values; Avoid storing null via '@Cacheable(unless="#result == null")' or configure RedisCache to allow 'null' via RedisCacheConfiguration]
+2025-09-08T16:34:32.890+05:30  WARN 4308 --- [growthlab-backend] [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: Cache 'organizationByEmail' does not allow 'null' values; Avoid storing null via '@Cacheable(unless="#result == null")' or configure RedisCache to allow 'null' via RedisCacheConfiguration]
+2025-09-08T16:36:13.258+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-10] c.m.growthlab.service.CohortServiceImpl  : Retrieving cohorts for organization ID: CHIP
+2025-09-08T16:36:13.310+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] c.m.growthlab.service.UserServiceImpl    : Fetching users by organization ID from database - cache miss: CHIP
+2025-09-08T16:36:13.806+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-10] c.m.growthlab.service.CohortServiceImpl  : Successfully retrieved 1 cohorts for organization ID: CHIP
+2025-09-08T17:05:40.167+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2025-09-08T17:05:41.695+05:30  INFO 4308 --- [growthlab-backend] [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:05:41.883+05:30  INFO 4308 --- [growthlab-backend] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2025-09-08T17:05:41.929+05:30  INFO 4308 --- [growthlab-backend] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2025-09-08T17:05:45.880+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T17:05:45.881+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T17:05:48.458+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T17:05:48.459+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T17:05:48.608+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 20 JPA repository interfaces.
+2025-09-08T17:05:51.247+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T17:05:51.252+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T17:05:51.253+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T17:05:51.423+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T17:05:51.424+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5528 ms
+2025-09-08T17:05:51.718+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T17:05:51.738+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T17:05:51.785+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T17:05:51.792+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2025-09-08T17:05:51.941+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@74aabb09
+2025-09-08T17:05:51.942+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2025-09-08T17:05:51.974+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T17:05:52.773+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T17:05:56.422+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:05:58.139+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3e154cc3-da9a-40ed-95a5-6cb61ed3208a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T17:05:58.142+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T17:05:58.191+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T17:05:58.482+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T17:05:59.090+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T17:05:59.132+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T17:05:59.211+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T17:05:59.245+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 13.677 seconds (process running for 9380.664)
+2025-09-08T17:05:59.250+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T17:06:00.637+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-08T17:06:01.060+05:30  INFO 4308 --- [growthlab-backend] [Thread-28] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:06:01.062+05:30  INFO 4308 --- [growthlab-backend] [Thread-28] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2025-09-08T17:06:01.065+05:30  INFO 4308 --- [growthlab-backend] [Thread-28] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2025-09-08T17:06:01.520+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T17:06:01.520+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T17:06:02.516+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T17:06:02.516+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T17:06:02.655+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 138 ms. Found 20 JPA repository interfaces.
+2025-09-08T17:06:03.386+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T17:06:03.387+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T17:06:03.388+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T17:06:03.478+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T17:06:03.478+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1951 ms
+2025-09-08T17:06:03.785+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T17:06:03.793+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T17:06:03.843+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T17:06:03.844+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2025-09-08T17:06:04.002+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@332aca92
+2025-09-08T17:06:04.002+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2025-09-08T17:06:04.018+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T17:06:04.557+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T17:06:06.825+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:06:07.843+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ae048dcd-8bdc-4f93-af9a-7202a12b9605
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T17:06:07.847+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T17:06:07.873+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T17:06:08.171+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T17:06:08.604+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T17:06:08.626+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T17:06:08.694+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T17:06:08.717+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 7.387 seconds (process running for 9390.137)
+2025-09-08T17:06:08.724+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T17:07:19.391+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-08T17:07:19.920+05:30  INFO 4308 --- [growthlab-backend] [Thread-33] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:07:19.922+05:30  INFO 4308 --- [growthlab-backend] [Thread-33] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2025-09-08T17:07:19.924+05:30  INFO 4308 --- [growthlab-backend] [Thread-33] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2025-09-08T17:07:20.152+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T17:07:20.153+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T17:07:21.234+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T17:07:21.234+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T17:07:21.349+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 20 JPA repository interfaces.
+2025-09-08T17:07:22.135+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T17:07:22.136+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T17:07:22.137+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T17:07:22.206+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T17:07:22.207+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2051 ms
+2025-09-08T17:07:22.431+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T17:07:22.439+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T17:07:22.460+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T17:07:22.463+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2025-09-08T17:07:22.578+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@4132a8c
+2025-09-08T17:07:22.579+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2025-09-08T17:07:22.596+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T17:07:23.163+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T17:07:25.578+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:07:26.659+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6331df82-1d88-42ce-85c8-ea258bbc14f1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T17:07:26.662+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T17:07:26.690+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T17:07:26.968+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T17:07:27.462+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T17:07:27.494+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T17:07:27.572+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T17:07:27.594+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 7.496 seconds (process running for 9469.015)
+2025-09-08T17:07:27.599+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T17:08:39.292+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08T17:08:39.293+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-08T17:08:39.304+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2025-09-08T17:09:06.716+05:30  WARN 4308 --- [growthlab-backend] [http-nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23503
+2025-09-08T17:09:06.716+05:30 ERROR 4308 --- [growthlab-backend] [http-nio-8081-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: update or delete on table "organizations" violates foreign key constraint "fk8u4fkcv3p58ef6ulyat1visnl" on table "cohorts"
+  Detail: Key (organization_id)=(CHIP) is still referenced from table "cohorts".
+2025-09-08T17:10:55.428+05:30  WARN 4308 --- [growthlab-backend] [http-nio-8081-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2025-09-08T17:11:04.330+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-7] c.m.g.service.CohortProgramServiceImpl   : Retrieving all cohort programs from database
+2025-09-08T17:11:04.364+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-7] c.m.g.service.CohortProgramServiceImpl   : Successfully retrieved 1 cohort programs
+2025-09-08T17:11:28.941+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-8] c.m.g.service.CohortProgramServiceImpl   : Deleting cohort program with ID: 1
+2025-09-08T17:11:28.994+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-8] c.m.g.service.CohortProgramServiceImpl   : Successfully deleted cohort program with ID: 1
+2025-09-08T17:11:36.324+05:30  WARN 4308 --- [growthlab-backend] [http-nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2025-09-08T17:11:44.567+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] c.m.g.service.CohortProgramServiceImpl   : Retrieving all cohort programs from database
+2025-09-08T17:11:44.572+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] c.m.g.service.CohortProgramServiceImpl   : Successfully retrieved 0 cohort programs
+2025-09-08T17:11:55.119+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-3] c.m.growthlab.service.CohortServiceImpl  : Retrieving all cohorts from database
+2025-09-08T17:11:55.126+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-3] c.m.growthlab.service.CohortServiceImpl  : Successfully retrieved 1 cohorts
+2025-09-08T17:12:08.962+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-2] c.m.growthlab.service.CohortServiceImpl  : Deleting cohort with ID: PROF-CHIP-1
+2025-09-08T17:12:09.067+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-2] c.m.growthlab.service.CohortServiceImpl  : Successfully deleted cohort with ID: PROF-CHIP-1
+2025-09-08T17:12:19.885+05:30  WARN 4308 --- [growthlab-backend] [http-nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2025-09-08T17:12:30.244+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-4] c.m.growthlab.service.CohortServiceImpl  : Retrieving all cohorts from database
+2025-09-08T17:12:30.249+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-4] c.m.growthlab.service.CohortServiceImpl  : Successfully retrieved 0 cohorts
+2025-09-08T17:12:51.219+05:30  WARN 4308 --- [growthlab-backend] [http-nio-8081-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.ArrayList<java.lang.String>` from Object value (token `JsonToken.START_OBJECT`)]
+2025-09-08T17:15:13.564+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-08T17:15:13.999+05:30  INFO 4308 --- [growthlab-backend] [Thread-38] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:15:14.000+05:30  INFO 4308 --- [growthlab-backend] [Thread-38] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2025-09-08T17:15:14.002+05:30  INFO 4308 --- [growthlab-backend] [Thread-38] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2025-09-08T17:15:14.228+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T17:15:14.229+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T17:15:15.325+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T17:15:15.326+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T17:15:15.413+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 20 JPA repository interfaces.
+2025-09-08T17:15:16.181+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T17:15:16.183+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T17:15:16.183+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T17:15:16.248+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T17:15:16.249+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2017 ms
+2025-09-08T17:15:16.479+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T17:15:16.491+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T17:15:16.530+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T17:15:16.531+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2025-09-08T17:15:16.639+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Added connection org.postgresql.jdbc.PgConnection@40ebb5be
+2025-09-08T17:15:16.640+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2025-09-08T17:15:16.652+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T17:15:17.307+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T17:15:19.817+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:15:20.930+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f2a038bd-202a-4727-bae7-aee1fc3ee849
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T17:15:20.936+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T17:15:20.967+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T17:15:21.247+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T17:15:22.158+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T17:15:22.239+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T17:15:22.343+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T17:15:22.383+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 8.207 seconds (process running for 9943.804)
+2025-09-08T17:15:22.388+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T17:24:32.340+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08T17:24:32.412+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-08T17:24:32.736+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 321 ms
+2025-09-08T17:24:35.470+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-6] c.m.growthlab.service.UserServiceImpl    : Fetching users by organization ID from database - cache miss: GROW
+2025-09-08T17:24:35.470+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-5] c.m.growthlab.service.CohortServiceImpl  : Retrieving cohorts for organization ID: GROW
+2025-09-08T17:24:36.271+05:30  INFO 4308 --- [growthlab-backend] [http-nio-8081-exec-5] c.m.growthlab.service.CohortServiceImpl  : Successfully retrieved 0 cohorts for organization ID: GROW
+2025-09-08T17:31:00.019+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-08T17:31:01.249+05:30  INFO 4308 --- [growthlab-backend] [Thread-43] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:31:01.335+05:30  INFO 4308 --- [growthlab-backend] [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2025-09-08T17:31:01.352+05:30  INFO 4308 --- [growthlab-backend] [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2025-09-08T17:31:04.422+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T17:31:04.424+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T17:31:07.067+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T17:31:07.067+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T17:31:07.234+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 166 ms. Found 20 JPA repository interfaces.
+2025-09-08T17:31:10.385+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T17:31:10.394+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T17:31:10.394+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T17:31:10.494+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T17:31:10.494+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6050 ms
+2025-09-08T17:31:10.782+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T17:31:10.794+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T17:31:10.865+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T17:31:10.873+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2025-09-08T17:31:11.013+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-10 - Added connection org.postgresql.jdbc.PgConnection@7f697351
+2025-09-08T17:31:11.014+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2025-09-08T17:31:11.043+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T17:31:12.379+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T17:31:15.502+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:31:20.472+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f1d37420-823a-4d83-bd9b-47994c948006
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T17:31:20.479+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T17:31:20.589+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T17:31:21.056+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T17:31:21.895+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T17:31:21.939+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T17:31:22.087+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T17:31:22.122+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 18.38 seconds (process running for 10903.542)
+2025-09-08T17:31:22.133+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T17:32:44.785+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-08T17:32:45.596+05:30  INFO 4308 --- [growthlab-backend] [Thread-48] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:32:45.597+05:30  INFO 4308 --- [growthlab-backend] [Thread-48] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2025-09-08T17:32:45.601+05:30  INFO 4308 --- [growthlab-backend] [Thread-48] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2025-09-08T17:32:45.968+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T17:32:45.969+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T17:32:47.607+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T17:32:47.608+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T17:32:47.734+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 124 ms. Found 20 JPA repository interfaces.
+2025-09-08T17:32:48.677+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T17:32:48.678+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T17:32:48.678+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T17:32:48.757+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T17:32:48.757+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2773 ms
+2025-09-08T17:32:48.979+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T17:32:48.984+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T17:32:49.007+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T17:32:49.008+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2025-09-08T17:32:49.214+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-11 - Added connection org.postgresql.jdbc.PgConnection@2e9a90a3
+2025-09-08T17:32:49.215+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2025-09-08T17:32:49.228+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T17:32:49.808+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T17:32:52.378+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:32:53.425+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d193161a-aff9-4d32-819a-05b2fe0b6058
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T17:32:53.456+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T17:32:53.479+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T17:32:53.760+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T17:32:54.211+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T17:32:54.237+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T17:32:54.296+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T17:32:54.334+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 8.438 seconds (process running for 10995.754)
+2025-09-08T17:32:54.343+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T17:38:00.091+05:30  INFO 4308 --- [growthlab-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-08T17:38:00.557+05:30  INFO 4308 --- [growthlab-backend] [Thread-53] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:38:00.559+05:30  INFO 4308 --- [growthlab-backend] [Thread-53] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2025-09-08T17:38:00.566+05:30  INFO 4308 --- [growthlab-backend] [Thread-53] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2025-09-08T17:38:00.810+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Starting GrowthlabBackendApplication using Java 17.0.11 with PID 4308 (C:\Users\Admin\growthlab-backend\target\classes started by Admin in C:\Users\Admin\growthlab-backend)
+2025-09-08T17:38:00.810+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T17:38:01.549+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-09-08T17:38:01.549+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T17:38:01.654+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 20 JPA repository interfaces.
+2025-09-08T17:38:02.705+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-09-08T17:38:02.706+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T17:38:02.707+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-09-08T17:38:02.770+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T17:38:02.771+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1953 ms
+2025-09-08T17:38:02.974+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T17:38:02.985+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T17:38:03.003+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T17:38:03.005+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2025-09-08T17:38:03.106+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-12 - Added connection org.postgresql.jdbc.PgConnection@3a81647f
+2025-09-08T17:38:03.106+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2025-09-08T17:38:03.120+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T17:38:03.617+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T17:38:05.727+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:38:06.740+05:30  WARN 4308 --- [growthlab-backend] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 640f157d-baa7-449c-956c-a7ab559355ad
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-09-08T17:38:06.745+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-09-08T17:38:06.767+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-09-08T17:38:07.101+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2025-09-08T17:38:07.498+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-09-08T17:38:07.521+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-09-08T17:38:07.588+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-08T17:38:07.613+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] c.m.g.GrowthlabBackendApplication        : Started GrowthlabBackendApplication in 6.871 seconds (process running for 11309.033)
+2025-09-08T17:38:07.617+05:30  INFO 4308 --- [growthlab-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-08T17:41:05.183+05:30  INFO 4308 --- [growthlab-backend] [RMI TCP Connection(204)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-09-08T17:41:05.600+05:30  INFO 4308 --- [growthlab-backend] [RMI TCP Connection(204)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T17:41:05.603+05:30  INFO 4308 --- [growthlab-backend] [RMI TCP Connection(204)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2025-09-08T17:41:05.606+05:30  INFO 4308 --- [growthlab-backend] [RMI TCP Connection(204)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.

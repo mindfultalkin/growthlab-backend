@@ -176,7 +176,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     private void sendWelcomeEmail(Organization organization, String plainPassword) {
         String adminName = organization.getOrganizationAdminName();
         String adminEmail = organization.getOrganizationAdminEmail();
-        String orgAdminUrl = "https://programs-admin.mindfultalk.in"; 
+        String orgAdminUrl = "https://courses-admin.mindfultalk.in"; 
         String supportEmail = "support@mindfultalk.in"; 
 
         String subject = "Welcome to Mindfultalk!";
@@ -195,7 +195,7 @@ public class OrganizationServiceImpl implements OrganizationService {
                 "Organization Dashboard: " + orgAdminUrl + "\n\n" +
                 "If you have any questions or need support, our team is here to help at " + supportEmail + ".\n\n" +
                 "Best regards,\n" +
-                "Mindfultalk.in Team";
+                "The Mindfultalk Team";
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(adminEmail);
@@ -237,6 +237,16 @@ public class OrganizationServiceImpl implements OrganizationService {
             .orElseThrow(() -> new EntityNotFoundException("Organization not found"));
         organization.setDeletedAt(OffsetDateTime.now(ZoneId.of("Asia/Kolkata")));
         organizationRepository.save(organization);
+    }
+
+    @Override
+    @CacheEvict(value = {"organizations", "organizationByEmail"}, allEntries = true)
+    public void hardDeleteOrganization(String organizationId) {
+        Organization organization = organizationRepository.findById(organizationId)
+            .orElseThrow(() -> new EntityNotFoundException("Organization not found"));
+        
+        // Permanently remove
+        organizationRepository.delete(organization);
     }
 
     
@@ -457,8 +467,8 @@ public class OrganizationServiceImpl implements OrganizationService {
                              "This is a reminder that the cohort \"" + cohort.getCohortName() + 
                              "\" will end in " + daysToEnd + " days on " + cohort.getCohortEndDate() + ".\n\n" +
                              "Please ensure all related tasks are completed before this date.\n\n" +
-                             "Best regards,\nMindfultalk.in Team";
-
+                             "Best regards,\n"+
+                             "The Mindfultalk Team";
             sendEmail(adminEmail, subject, message);
         }
     }
@@ -478,7 +488,8 @@ public class OrganizationServiceImpl implements OrganizationService {
                                  "This is a reminder that your cohort \"" + cohort.getCohortName() + 
                                  "\" will end in " + daysToEnd + " days on " + cohort.getCohortEndDate() + ".\n\n" +
                                  "Please ensure you complete all tasks before this date.\n\n" +
-                                 "Best regards,\nMindfultalk.in Team";
+                                 "Best regards,\n" +
+                                 "The Mindfultalk Team";
 
                 sendEmail(userEmail, subject, message);
             }

@@ -104,6 +104,19 @@ public class OrganizationController {
             return new ResponseEntity<>(new ErrorResponse("Failed to delete organization", e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    
+    // Delete hard organization by Id 
+    @DeleteMapping("/{organizationId}/hard")
+    public ResponseEntity<?> hardDeleteOrganization(@PathVariable String organizationId) {
+        try {
+            organizationService.hardDeleteOrganization(organizationId);
+            return ResponseEntity.noContent().build();  // 204 No Content
+        } catch (EntityNotFoundException e) {
+            return new ResponseEntity<>(new ErrorResponse("Organization not found", e.getMessage()), HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ErrorResponse("Failed to delete organization", e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
 
     // Delete multiple organizations
