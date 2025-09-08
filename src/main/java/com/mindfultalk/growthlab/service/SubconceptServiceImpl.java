@@ -126,7 +126,7 @@ public class SubconceptServiceImpl implements SubconceptService {
     }
     
     
-    @Override
+    @Override 
     @CacheEvict(value = {"subconcepts", "subconceptDTOs"}, allEntries = true)
     public Map<String, Object> uploadSubconceptsCSV(MultipartFile file) {
         logger.info("Starting CSV upload process for file: {}", file.getOriginalFilename());
@@ -148,11 +148,52 @@ public class SubconceptServiceImpl implements SubconceptService {
                 throw new RuntimeException("CSV file is empty");
             }
 
-            // --- Step 1: Build header map ---
+            // --- Step 1: Build header map (handle exact column names from CSV) ---
             String[] headers = records.get(0);
             Map<String, Integer> headerMap = new HashMap<>();
             for (int i = 0; i < headers.length; i++) {
-                headerMap.put(headers[i].trim().toLowerCase(), i);
+                String cleanHeader = headers[i].trim().toLowerCase();
+                headerMap.put(cleanHeader, i);
+                
+                // Map variations to standard names for easier lookup
+                switch (cleanHeader) {
+                    case "subconceptid":
+                        headerMap.put("subconcept_id", i);
+                        break;
+                    case "showto":
+                        headerMap.put("show_to", i);
+                        break;
+                    case "subconceptdesc":
+                        headerMap.put("subconcept_desc", i);
+                        break;
+                    case "subconceptdesc2":
+                        headerMap.put("subconcept_desc_2", i);
+                        break;
+                    case "subconceptgroup":
+                        headerMap.put("subconcept_group", i);
+                        break;
+                    case "subconceptlink":
+                        headerMap.put("subconcept_link", i);
+                        break;
+                    case "subconcepttype":
+                        headerMap.put("subconcept_type", i);
+                        break;
+                    case "numquestions":
+                        headerMap.put("num_questions", i);
+                        break;
+                    case "subconceptmaxscore":
+                        headerMap.put("subconcept_maxscore", i);
+                        break;
+                    case "conceptid":
+                        headerMap.put("concept_id", i);
+                        break;
+                    case "contentid":
+                        headerMap.put("content_id", i);
+                        break;
+                    case "subconceptduration":
+                        headerMap.put("duration", i);
+                        break;
+                }
             }
 
             logger.info("CSV Header mapping: {}", headerMap);
@@ -203,14 +244,21 @@ public class SubconceptServiceImpl implements SubconceptService {
                         subconcept.setSubconceptMaxscore(maxScore);
                     }
 
-                    // --- Duration ---
+                    // --- Duration (Fixed to handle decimal minutes properly) ---
                     String durationStr = getValue(record, headerMap, "duration");
-                    int duration = DurationParser.parseToSeconds(durationStr);
+                    int duration = parseSubconceptDuration(durationStr);
                     subconcept.setSubconceptDuration(duration);
 
                     // --- Concept and Content ---
                     String conceptId = getValue(record, headerMap, "concept_id");
                     String contentId = getValue(record, headerMap, "content_id");
+
+                    // Validate concept exists
+                    if (conceptId == null || conceptId.isEmpty()) {
+                        fail(lineNumber, "Concept ID cannot be empty", failedIds);
+                        failedCount++;
+                        continue;
+                    }
 
                     Optional<Concept> concept = conceptRepository.findById(conceptId);
                     if (concept.isEmpty()) {
@@ -219,11 +267,17 @@ public class SubconceptServiceImpl implements SubconceptService {
                         continue;
                     }
 
+                    // Validate content exists (if provided)
                     Optional<ContentMaster> content = Optional.empty();
-                    if (contentId != null) {
+                    if (contentId != null && !contentId.isEmpty()) {
                         try {
                             int contentInt = Integer.parseInt(contentId);
                             content = contentRepository.findById(contentInt);
+                            if (content.isEmpty()) {
+                                fail(lineNumber, "ContentId " + contentId + " not found", failedIds);
+                                failedCount++;
+                                continue;
+                            }
                         } catch (NumberFormatException ex) {
                             fail(lineNumber, "Invalid ContentId format: " + contentId, failedIds);
                             failedCount++;
@@ -231,14 +285,10 @@ public class SubconceptServiceImpl implements SubconceptService {
                         }
                     }
 
-                    if (content.isEmpty()) {
-                        fail(lineNumber, "ContentId " + contentId + " not found", failedIds);
-                        failedCount++;
-                        continue;
-                    }
-
                     subconcept.setConcept(concept.get());
-                    subconcept.setContent(content.get());
+                    if (content.isPresent()) {
+                        subconcept.setContent(content.get());
+                    }
                     subconcept.setUuid(UUID.randomUUID());
 
                     subconceptRepository.save(subconcept);
@@ -248,10 +298,12 @@ public class SubconceptServiceImpl implements SubconceptService {
                 } catch (Exception e) {
                     fail(lineNumber, "Unexpected error - " + e.getMessage(), failedIds);
                     failedCount++;
+                    logger.error("Error processing line {}: {}", lineNumber, e.getMessage(), e);
                 }
             }
 
         } catch (Exception e) {
+            logger.error("Failed to process CSV file: {}", e.getMessage(), e);
             throw new RuntimeException("Failed to process CSV file: " + e.getMessage(), e);
         }
 
@@ -260,6 +312,7 @@ public class SubconceptServiceImpl implements SubconceptService {
         result.put("totalProcessed", createdCount + failedCount);
         result.put("failedIds", failedIds);
 
+        logger.info("CSV upload completed. Created: {}, Failed: {}", createdCount, failedCount);
         return result;
     }
 
@@ -267,9 +320,26 @@ public class SubconceptServiceImpl implements SubconceptService {
     private String getValue(String[] record, Map<String, Integer> headerMap, String column) {
         Integer idx = headerMap.get(column.toLowerCase());
         if (idx != null && idx < record.length) {
-            return record[idx].trim();
+            String value = record[idx].trim();
+            return value.isEmpty() ? null : value;
         }
         return null;
+    }
+
+    // --- Utility: Parse duration to seconds ---
+    private int parseSubconceptDuration(String durationStr) {
+        if (durationStr == null || durationStr.trim().isEmpty()) {
+            return 0; // Default to 0 seconds if no duration provided
+        }
+        
+        try {
+            double minutes = Double.parseDouble(durationStr.trim());
+            // Convert minutes to seconds and round to nearest integer
+            return (int) Math.round(minutes * 60);
+        } catch (NumberFormatException e) {
+            logger.warn("Invalid duration format: '{}', defaulting to 0 seconds", durationStr);
+            return 0;
+        }
     }
 
     // --- Utility: Fail logging ---
