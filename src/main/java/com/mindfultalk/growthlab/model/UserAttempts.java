@@ -18,7 +18,7 @@ public class UserAttempts {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
     private OffsetDateTime userAttemptEndTimestamp;
 
-    @Column(name = "user_attempt_flag", columnDefinition = "BIT", nullable = false)
+    @Column(name = "user_attempt_flag", nullable = false)
     private boolean userAttemptFlag;
 
     @Column(name = "user_attempt_score", nullable = false)
@@ -59,24 +59,24 @@ public class UserAttempts {
     public UserAttempts() {}
 
     public UserAttempts(Long userAttemptId, OffsetDateTime userAttemptEndTimestamp, boolean userAttemptFlag,
-                        int userAttemptScore, OffsetDateTime userAttemptStartTimestamp, User user,
-                        Unit unit, Program program, Stage stage, UserSessionMapping session,
-                        Subconcept subconcept, UUID uuid) {
-        this.userAttemptId = userAttemptId;
-        this.userAttemptEndTimestamp = userAttemptEndTimestamp;
-        this.userAttemptFlag = userAttemptFlag;
-        this.userAttemptScore = userAttemptScore;
-        this.userAttemptStartTimestamp = userAttemptStartTimestamp;
-        this.user = user;
-        this.unit = unit;
-        this.program = program;
-        this.session = session;
-        this.subconcept = subconcept;
-        this.stage = stage;
-        this.uuid = uuid;
-    }
+			int userAttemptScore, OffsetDateTime userAttemptStartTimestamp, Unit unit, Program program, Stage stage,
+			User user, UserSessionMapping session, Subconcept subconcept, UUID uuid) {
+		super();
+		this.userAttemptId = userAttemptId;
+		this.userAttemptEndTimestamp = userAttemptEndTimestamp;
+		this.userAttemptFlag = userAttemptFlag;
+		this.userAttemptScore = userAttemptScore;
+		this.userAttemptStartTimestamp = userAttemptStartTimestamp;
+		this.unit = unit;
+		this.program = program;
+		this.stage = stage;
+		this.user = user;
+		this.session = session;
+		this.subconcept = subconcept;
+		this.uuid = uuid;
+	}
 
-    // Getters and Setters
+	// Getters and Setters
 
     public Long getUserAttemptId() {
         return userAttemptId;
@@ -95,14 +95,14 @@ public class UserAttempts {
     }
 
     public boolean isUserAttemptFlag() {
-        return userAttemptFlag;
-    }
+		return userAttemptFlag;
+	}
 
-    public void setUserAttemptFlag(boolean userAttemptFlag) {
-        this.userAttemptFlag = userAttemptFlag;
-    }
+	public void setUserAttemptFlag(boolean userAttemptFlag) {
+		this.userAttemptFlag = userAttemptFlag;
+	}
 
-    public int getUserAttemptScore() {
+	public int getUserAttemptScore() {
         return userAttemptScore;
     }
 
@@ -175,24 +175,15 @@ public class UserAttempts {
     }
 
     @Override
-    public String toString() {
-        return "UserAttempts{" +
-                "userAttemptId=" + userAttemptId +
-                ", userAttemptEndTimestamp=" + userAttemptEndTimestamp +
-                ", userAttemptFlag=" + userAttemptFlag +
-                ", userAttemptScore=" + userAttemptScore +
-                ", userAttemptStartTimestamp=" + userAttemptStartTimestamp +
-                ", unit=" + unit +
-                ", program=" + program +
-                ", stage=" + stage +
-                ", user=" + user +
-                ", session=" + session +
-                ", subconcept=" + subconcept +
-                ", uuid='" + uuid + '\'' +
-                '}';
-    }
+	public String toString() {
+		return "UserAttempts [userAttemptId=" + userAttemptId + ", userAttemptEndTimestamp=" + userAttemptEndTimestamp
+				+ ", userAttemptFlag=" + userAttemptFlag + ", userAttemptScore=" + userAttemptScore
+				+ ", userAttemptStartTimestamp=" + userAttemptStartTimestamp + ", unit=" + unit + ", program=" + program
+				+ ", stage=" + stage + ", user=" + user + ", session=" + session + ", subconcept=" + subconcept
+				+ ", uuid=" + uuid + "]";
+	}
 
-    // Ensure UUID and default timestamps to UTC
+	// Ensure UUID and default timestamps to UTC
     @PrePersist
     @PreUpdate
     private void initializeOrAdjustTimestamps() {
