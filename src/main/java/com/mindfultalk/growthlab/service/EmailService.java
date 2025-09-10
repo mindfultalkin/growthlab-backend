@@ -3,7 +3,6 @@ package com.mindfultalk.growthlab.service;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -95,28 +94,23 @@ public class EmailService {
         }
     }
     
-    public void sendEmail(String to, String subject, String body) {
-        logger.info("Attempting to send email to: {}", to);
-        System.out.println("Attempting to send email to: " + to);
+    public void sendEmail(String to, String subject, String body, boolean isHtml) {
+    	logger.info("Attempting to send {} email to: {}", isHtml ? "HTML" : "plain text", to);
         
-        try {
-            SimpleMailMessage message = new SimpleMailMessage();
-            message.setTo(to);
-            message.setSubject(subject);
-            message.setText(body);
-            
-            logger.info("Email content prepared. Subject: {}", subject);
-            System.out.println("Email content prepared. Subject: " + subject);
-            
+    	try {
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
+            helper.setTo(to);
+            helper.setSubject(subject);
+            helper.setText(body, isHtml); // if true → HTML, else plain text
+
             mailSender.send(message);
-            
+
             logger.info("Email successfully sent to: {}", to);
-            System.out.println("Email successfully sent to: " + to);
         } catch (Exception e) {
             logger.error("Failed to send email to: {}. Error: {}", to, e.getMessage());
-            System.err.println("Failed to send email to: " + to + ". Error: " + e.getMessage());
-            e.printStackTrace(); // Print full stack trace to console
-            throw e; // Re-throw to be handled by caller
+            throw new RuntimeException("Failed to send email", e);
         }
     }
 
@@ -176,55 +170,95 @@ public class EmailService {
     }
 
     
-    public void sendUserCreationEmail(String userEmail, String userName, String userId, String plainPassword, 
-    		List<String> programNames, List<String> cohortNames, String orgAdminEmail, String orgName, String userType) { 
-    	
-        String subject = "Welcome to Your Learning Journey!";
-        
-     // Building the list of programs and cohorts dynamically
+    public void sendUserCreationEmail(String userEmail, String userName, String userId, String plainPassword, List<String> programNames,
+    		List<String> cohortNames, String orgAdminEmail, String orgName, String userType) {
+
+        String subject = "🎉 Welcome to Your Learning Journey with Mindfultalk!";
+
+        // Build programs & cohorts
         StringBuilder programCohortDetails = new StringBuilder();
-        for (int i = 0; i < programNames.size(); i++) {
-            programCohortDetails.append("Program Name: ").append(programNames.get(i)).append("\n");
-            if (i < cohortNames.size()) {
-                programCohortDetails.append("Cohort Name: ").append(cohortNames.get(i)).append("\n\n");
+        int maxSize = Math.max(programNames.size(), cohortNames != null ? cohortNames.size() : 0);
+
+        for (int i = 0; i < maxSize; i++) {
+            programCohortDetails.append("<p style='margin:5px 0;'>• ");
+            if (i < programNames.size()) {
+                programCohortDetails.append("<strong>Program:</strong> ").append(programNames.get(i));
             }
+            if (cohortNames != null && i < cohortNames.size()) {
+                if (i < programNames.size()) {
+                    programCohortDetails.append(" | ");
+                }
+                programCohortDetails.append("<strong>Cohort:</strong> ").append(cohortNames.get(i));
+            }
+            programCohortDetails.append("</p>");
         }
-        
-        String body =
-        	    "Dear " + userName + ",\n\n" +
-        	    "🌱 Welcome to your transformative learning journey with **Mindfultalk**!\n\n" +
-        	    "We’re excited to confirm your enrollment in the following program(s):\n\n" +
-        	    programCohortDetails + "\n\n" +
 
-        	    "🔑 **Your Login Credentials**\n" +
-        	    "• User ID: " + userId + "\n" +
-        	    "• Password: " + plainPassword + "\n" +
-        	    "• User Type: " + userType + "\n\n" +
-        	    "👉 Access your personal learning portal here: https://courses.mindfultalk.in\n" +
-        	    "💡 Pro Tip: Bookmark this link for quick access anytime.\n\n" +
+        // HTML email body
+        String body = String.format(
+            "<html><body style='font-family: Arial, sans-serif; line-height:1.6; color:#333;'>"
+            + "<p>Dear <strong>%s</strong>,</p>"
 
-        	    "🤝 **Need Support?**\n" +
-        	    "Our team is here whenever you need us:\n" +
-        	    "• Administrator: " + orgAdminEmail + "\n" +
-        	    "• Organization: " + orgName + "\n\n" +
-        	    "Got questions or technical issues? Just reach out—we’ve got you covered.\n\n" +
+            + "<p>What an exciting day! 🌟 <strong>Welcome to your transformative learning journey with Mindfultalk!</strong></p>"
 
-        	    "🚀 **Next Steps**\n" +
-        	    "1. Log in to your portal using the credentials above\n" +
-        	    "2. Explore your enrolled programs and course materials\n" +
-        	    "3. Connect with fellow learners in your cohort\n" +
-        	    "4. Begin your first module and kick-start your journey\n\n" +
+            + "<h4 style='color:#2c3e50;'>📚 Your Enrolled Programs</h4>"
+            + "%s"
 
-        	    "This is more than just a course—it’s your opportunity to unlock potential, build valuable skills, and achieve your goals. Remember, we’re here to support you every step of the way.\n\n" +
-        	    "We can’t wait to celebrate your progress and growth! 🎉\n\n" +
+            + "<h4 style='color:#2c3e50;'>🔐 Your Secure Login Credentials</h4>"
+            + "<p><em>(Please keep these safe and handy!)</em></p>"
+            + "<ul>"
+            + "<li><strong>User ID:</strong> %s</li>"
+            + "<li><strong>Password:</strong> %s</li>"
+            + "<li><strong>User Type:</strong> %s</li>"
+            + "</ul>"
 
-        	    "Warm regards,\n\n" +
-        	    "The Mindfultalk Team\n" +
-        	    "Empowering Growth, One Mind at a Time\n\n" +
-        	    "P.S. Keep an eye on your inbox for course updates, learning tips, and inspiring success stories from your fellow learners.";
+            + "<h4 style='color:#2c3e50;'>🚀 Access Your Learning Portal</h4>"
+            + "<p>Ready to dive in? Your personal learning hub awaits:<br>"
+            + "<a href='https://courses.mindfultalk.in' style='color:#1a73e8; font-weight:bold;'>👉 https://courses.mindfultalk.in</a></p>"
+            + "<p><em>💡 Pro Tip: Bookmark this link and add it to your home screen for lightning-fast access!</em></p>"
 
-        sendEmail(userEmail, subject, body);
+            + "<h4 style='color:#2c3e50;'>🤝 Your Dedicated Support Team</h4>"
+            + "<ul>"
+            + "<li><strong>Your Administrator:</strong> %s</li>"
+            + "<li><strong>Organization:</strong> %s</li>"
+            + "</ul>"
+
+            + "<h4 style='color:#2c3e50;'>✨ Your Exciting Next Steps</h4>"
+            + "<ol>"
+            + "<li>🎯 <strong>Log into your portal</strong> using the credentials above</li>"
+            + "<li>🔍 <strong>Explore your programs</strong> and get familiar with the course materials</li>"
+            + "<li>👥 <strong>Connect with your cohort</strong> - you're about to meet some incredible people!</li>"
+            + "<li>📖 <strong>Start your first module</strong> and begin this amazing transformation</li>"
+            + "</ol>"
+
+            + "<hr>"
+
+            + "<p><strong>This isn't just another course</strong> - this is your opportunity to unlock potential you didn't even know you had, build skills that will serve you for life, and achieve goals that once seemed impossible.</p>"
+
+            + "<p>I want you to know that <strong>we're genuinely invested in your success</strong>. Every resource, every lesson, every support interaction has been designed with your growth in mind. Your success truly is our mission, and we can't wait to be part of your journey!</p>"
+
+            + "<p><strong>Here's to your bright future and all the amazing discoveries ahead! 🎊</strong></p>"
+
+            + "<p>With genuine excitement for your journey,</p>"
+            + "<p><strong>The Mindfultalk Team</strong><br>"
+            + "<em>\"Empowering Growth, One Mind at a Time\"</em></p>"
+
+            + "<hr>"
+            + "<p><em>P.S. Keep your eyes peeled for updates, learning tips, and inspiring success stories. You're part of an incredible community now! 💌</em></p>"
+
+            + "</body></html>",
+            userName,
+            programCohortDetails.toString(),
+            userId,
+            plainPassword,
+            userType,
+            orgAdminEmail,
+            orgName
+        );
+
+        // Make sure sendEmail sets MIME type to HTML
+        sendEmail(userEmail, subject, body, true); // true = HTML
     }
+
     
     public void sendCohortAssignmentEmail(String userEmail, String userName, String cohortName, 
             String programName, String orgName) {
@@ -253,7 +287,7 @@ public class EmailService {
                         + "P.S. Remember, every step you take is one closer to achieving your goals. Let’s do this together! 🚀";
 
         try {
-            sendEmail(userEmail, subject, body);
+            sendEmail(userEmail, subject, body, false);
         } catch (Exception e) {
             logger.error("Failed to send cohort assignment email. User: {}, Error: {}", userName, e.getMessage());
             System.err.println("Failed to send cohort assignment email. User: " + userName + ", Error: " + e.getMessage());
@@ -327,7 +361,7 @@ public class EmailService {
             bodyBuilder.append("The Mindfultalk Team");
             
             // Send the email
-            sendEmail(userEmail, subject, bodyBuilder.toString());
+            sendEmail(userEmail, subject, bodyBuilder.toString(), false);
             logger.info("Assignment correction notification email sent successfully to {}", userEmail);
             
         } catch (Exception e) {

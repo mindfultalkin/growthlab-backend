@@ -13,8 +13,7 @@ import org.springframework.web.cors.CorsConfiguration;
 
 import com.mindfultalk.growthlab.filter.SwaggerAuthFilter;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Configuration
 public class SecurityConfig {
@@ -41,7 +40,6 @@ public class SecurityConfig {
                         "http://13.234.42.153:8080",
                         "http://13.234.42.153:3000",
                         "https://flowofenglish.thechippersage.com",
-                        "https://flowofenglish.thechippersage.com/admin",
                         "https://flowofenglish-user.thechippersage.com",
                         "https://flowofenglish-admin.thechippersage.com",
                         "https://flowofenglish-old.thechippersage.com/",
@@ -57,7 +55,6 @@ public class SecurityConfig {
                         "https://d27ig5p8mdmxxx.cloudfront.net/", // CloudFront Mindful Frontend
                         "https://d1vbbqq0bbf3hp.cloudfront.net/", // CloudFront Mindful User Frontend
                         "https://dqbr334ijyl49.cloudfront.net/", // CloudFront Mindful Admin Frontend
-                        "http://mft-growthlab-backend-prod-alb-324963082.ap-south-1.elb.amazonaws.com", //ECS Domain
                         "http://mft-growthlab-backend-prod-alb-324963082.ap-south-1.elb.amazonaws.com/", //ECS Domain
                         "https://paymentpage-nine.vercel.app/", // Razorpay payment page
                         "https://courses-api.mindfultalk.in",
