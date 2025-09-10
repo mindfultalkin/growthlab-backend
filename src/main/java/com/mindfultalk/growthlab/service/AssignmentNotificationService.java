@@ -103,7 +103,7 @@ public class AssignmentNotificationService {
         body.append("Thank you for your dedication,\n");
         body.append("Team Chippersage");
         
-        emailService.sendEmail(mentor.getUserEmail(), subject, body.toString());
+        emailService.sendEmail(mentor.getUserEmail(), subject, body.toString(), false);
     }
     
     private void sendAdminEmail(User admin, Cohort cohort, List<UserAssignment> assignments) {
@@ -127,7 +127,7 @@ public class AssignmentNotificationService {
         body.append("\nBest regards,\n");
         body.append("Team Chippersage");
         
-        emailService.sendEmail(admin.getUserEmail(), subject, body.toString());
+        emailService.sendEmail(admin.getUserEmail(), subject, body.toString(), false);
     }
     
     private void sendOrgAdminEmail(Organization org, Cohort cohort, List<UserAssignment> assignments) {
@@ -149,6 +149,6 @@ public class AssignmentNotificationService {
         body.append("Thank you for your continued partnership,\n");
         body.append("Team Chippersage");
         
-        emailService.sendEmail(org.getOrganizationAdminEmail(), subject, body.toString());
+        emailService.sendEmail(org.getOrganizationAdminEmail(), subject, body.toString(), false);
     }
 }

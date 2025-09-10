@@ -207,6 +207,7 @@ public class ProgramConceptsMappingServiceImpl implements ProgramConceptsMapping
             subconceptResponseDTO.setSubconceptMaxscore(mapping.getSubconcept().getSubconceptMaxscore());
             subconceptResponseDTO.setNumQuestions(mapping.getSubconcept().getNumQuestions());
             subconceptResponseDTO.setShowTo(mapping.getSubconcept().getShowTo());
+            subconceptResponseDTO.setSubconceptDuration(mapping.getSubconcept().getSubconceptDuration());
             subconceptResponseDTO.setSubconceptGroup(mapping.getSubconcept().getSubconceptGroup());
             
          
