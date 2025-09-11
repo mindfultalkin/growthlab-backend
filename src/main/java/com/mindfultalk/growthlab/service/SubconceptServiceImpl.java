@@ -376,6 +376,7 @@ public class SubconceptServiceImpl implements SubconceptService {
             existingSubconcept.setSubconceptType(subconcept.getSubconceptType());
             existingSubconcept.setNumQuestions(subconcept.getNumQuestions());
             existingSubconcept.setSubconceptMaxscore(subconcept.getSubconceptMaxscore());
+            existingSubconcept.setSubconceptDuration(subconcept.getSubconceptDuration());
             existingSubconcept.setConcept(subconcept.getConcept());
             existingSubconcept.setContent(subconcept.getContent());
             try {
@@ -496,8 +497,12 @@ public class SubconceptServiceImpl implements SubconceptService {
                         existingSubconcept::setSubconceptLink, updatedFields);
                     hasUpdates |= updateField(headerMap, record, "subconcepttype", 
                         existingSubconcept::setSubconceptType, updatedFields);
+                 // Update numeric fields with validation
+                    if (updateNumericField(headerMap, record, "subconceptDuration", 
+                            existingSubconcept::setSubconceptDuration, updatedFields, subconceptId, failedIds));{
+                                hasUpdates = true;
+                            }
                     
-                    // Update numeric fields with validation
                     if (updateNumericField(headerMap, record, "numquestions", 
                         existingSubconcept::setNumQuestions, updatedFields, subconceptId, failedIds)) {
                         hasUpdates = true;

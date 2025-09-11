@@ -226,7 +226,6 @@ public class EmailService {
             + "<ol>"
             + "<li>🎯 <strong>Log into your portal</strong> using the credentials above</li>"
             + "<li>🔍 <strong>Explore your programs</strong> and get familiar with the course materials</li>"
-            + "<li>👥 <strong>Connect with your cohort</strong> - you're about to meet some incredible people!</li>"
             + "<li>📖 <strong>Start your first module</strong> and begin this amazing transformation</li>"
             + "</ol>"
 
