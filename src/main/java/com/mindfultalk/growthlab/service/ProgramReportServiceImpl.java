@@ -1,6 +1,5 @@
 package com.mindfultalk.growthlab.service;
 
-
 import java.io.PrintWriter;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -57,7 +56,44 @@ public class ProgramReportServiceImpl implements ProgramReportService {
     
     private static final Logger logger = LoggerFactory.getLogger(ProgramReportServiceImpl.class);
 
-   
+    private boolean isSubconceptVisibleToUser(String userType, Subconcept subconcept) {
+        try {
+            logger.debug("Checking visibility for subconcept {} with userType: {}", subconcept.getSubconceptId(), userType);
+            
+            String showTo = subconcept.getShowTo();
+            if (showTo == null || showTo.trim().isEmpty()) {
+                logger.debug("ShowTo field is null or empty for subconcept {}, defaulting to not visible", subconcept.getSubconceptId());
+                return false;
+            }
+
+            boolean isVisible;
+            switch (showTo.toLowerCase().trim()) {
+                case "mentor":
+                    isVisible = "mentor".equalsIgnoreCase(userType);
+                    break;
+                case "learner":
+                    isVisible = "learner".equalsIgnoreCase(userType);
+                    break;
+                case "learner,mentor":
+                case "mentor,learner":
+                    isVisible = "mentor".equalsIgnoreCase(userType) || "learner".equalsIgnoreCase(userType);
+                    break;
+                default:
+                    logger.warn("Unknown showTo value '{}' for subconcept {}, defaulting to not visible", showTo, subconcept.getSubconceptId());
+                    isVisible = false;
+                    break;
+            }
+            
+            logger.debug("Subconcept {} visibility result: {} (showTo: '{}', userType: '{}')", 
+                    subconcept.getSubconceptId(), isVisible, showTo, userType);
+            
+            return isVisible;
+        } catch (Exception e) {
+            logger.error("Error checking subconcept visibility for subconcept {}: {}", subconcept.getSubconceptId(), e.getMessage(), e);
+            return false; // Default to not visible on error
+        }
+    }
+
     
     @Override
     @Cacheable(value = "userInfo", key = "#userId")
@@ -81,7 +117,7 @@ public class ProgramReportServiceImpl implements ProgramReportService {
     }
     
     @Override
-    @Cacheable(value = "programReports", key = "#userId + '_' + #programId", unless = "#result == null")
+    @Cacheable(value = "programReports", key = "#userId + '_' + #programId + '_' + #root.target.getUserType(#userId)", unless = "#result == null")
     public ProgramReportDTO generateProgramReport(String userId, String programId) {
         logger.info("Generating program report for userId: {} and programId: {}", userId, programId);
         long startTime = System.currentTimeMillis();
@@ -90,7 +126,12 @@ public class ProgramReportServiceImpl implements ProgramReportService {
             Program program = programRepository.findById(programId)
                 .orElseThrow(() -> new ResourceNotFoundException("Program not found with ID: " + programId));
 
-            logger.debug("Found program: {} for programId: {}", program.getProgramName(), programId);
+            // Get user type for filtering
+            User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + userId));
+            String userType = user.getUserType();
+
+            logger.debug("Found program: {} for programId: {} with userType: {}", program.getProgramName(), programId, userType);
 
             ProgramReportDTO report = new ProgramReportDTO();
             report.setProgramId(programId);
@@ -148,7 +189,7 @@ public class ProgramReportServiceImpl implements ProgramReportService {
                 // Update completion tracking
                 previousStageCompleted = "yes".equals(stageReport.getCompletionStatus());
                 
-                // Process units within stage
+                // Process units within stage for subconcept counts (filtered by visibility)
                 for (UnitReportDTO unitReport : stageReport.getUnits()) {
                     totalSubconcepts += unitReport.getTotalSubconcepts();
                     completedSubconcepts += unitReport.getCompletedSubconcepts();
@@ -161,7 +202,7 @@ public class ProgramReportServiceImpl implements ProgramReportService {
                 }
             }
 
-            // Set overall statistics
+            // Set overall statistics (now based on user-visible subconcepts only)
             report.setTotalStages(stages.size());
             report.setCompletedStages((int) stageReports.stream()
                 .filter(s -> "yes".equals(s.getCompletionStatus()))
@@ -186,7 +227,7 @@ public class ProgramReportServiceImpl implements ProgramReportService {
             
             long endTime = System.currentTimeMillis();
             logger.info("Successfully generated program report for userId: {} and programId: {} in {}ms. " +
-                    "Stats: {}/{} stages, {}/{} units, {}/{} subconcepts completed", 
+                    "Stats: {}/{} stages, {}/{} units, {}/{} visible subconcepts completed", 
                     userId, programId, (endTime - startTime),
                     report.getCompletedStages(), report.getTotalStages(),
                     completedUnits, totalUnits,
@@ -196,6 +237,18 @@ public class ProgramReportServiceImpl implements ProgramReportService {
         } catch (Exception e) {
             logger.error("Error generating program report for userId: {} and programId: {}", userId, programId, e);
             throw e;
+        }
+    }
+
+    // Helper method to get user type (for cache key)
+    public String getUserType(String userId) {
+        try {
+            User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + userId));
+            return user.getUserType();
+        } catch (Exception e) {
+            logger.error("Error getting user type for userId: {}", userId, e);
+            return "unknown";
         }
     }
 
@@ -258,36 +311,50 @@ public class ProgramReportServiceImpl implements ProgramReportService {
     }
 
     @Override
-    @Cacheable(value = "unitReports", key = "#userId + '_' + #unitId", unless = "#result == null")
+    @Cacheable(value = "unitReports", key = "#userId + '_' + #unitId + '_' + #root.target.getUserType(#userId)", unless = "#result == null")
     public UnitReportDTO generateUnitReport(String userId, String unitId) {
         logger.debug("Generating unit report for userId: {} and unitId: {}", userId, unitId);
         
         try {
             Unit unit = unitRepository.findById(unitId)
                 .orElseThrow(() -> new ResourceNotFoundException("Unit not found with ID: " + unitId));
+            
+            // Get user type for filtering
+            User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + userId));
+            String userType = user.getUserType();
                 
             UnitReportDTO report = new UnitReportDTO();
             report.setUnitId(unitId);
             report.setUnitName(unit.getUnitName());
             report.setUnitDesc(unit.getUnitDesc());
             
-            // Get all subconcepts for the unit
-            List<ProgramConceptsMapping> mappings = programConceptsMappingRepository.findByUnit_UnitId(unitId);
-            logger.debug("Found {} subconcepts for unitId: {}", mappings.size(), unitId);
+            // Get all subconcepts for the unit and filter by user visibility
+            List<ProgramConceptsMapping> allMappings = programConceptsMappingRepository.findByUnit_UnitId(unitId);
+            List<ProgramConceptsMapping> visibleMappings = allMappings.stream()
+                .filter(m -> isSubconceptVisibleToUser(userType, m.getSubconcept()))
+                .collect(Collectors.toList());
+            
+            logger.debug("Found {} visible subconcepts out of {} total for unitId: {} and userType: {}", 
+                    visibleMappings.size(), allMappings.size(), unitId, userType);
             
             List<SubconceptReportDTO> subconceptReports = new ArrayList<>();
             
             // Get all completed subconcepts for this user and unit
             List<UserSubConcept> completedSubconcepts = userSubConceptRepository
                 .findByUser_UserIdAndUnit_UnitId(userId, unitId);
+            
+            Set<String> visibleSubconceptIds = visibleMappings.stream()
+                .map(m -> m.getSubconcept().getSubconceptId())
+                .collect(Collectors.toSet());
                 
-            // Process each subconcept
-            for (ProgramConceptsMapping mapping : mappings) {
+            // Process each visible subconcept
+            for (ProgramConceptsMapping mapping : visibleMappings) {
                 SubconceptReportDTO subconceptReport = new SubconceptReportDTO();
                 subconceptReport.setSubconceptId(mapping.getSubconcept().getSubconceptId());
                 subconceptReport.setSubconceptDesc(mapping.getSubconcept().getSubconceptDesc());
                 
-                // Check completion status
+                // Check completion status (only for visible subconcepts)
                 boolean isCompleted = completedSubconcepts.stream()
                     .anyMatch(cs -> cs.getSubconcept().getSubconceptId()
                         .equals(mapping.getSubconcept().getSubconceptId()));
@@ -329,12 +396,11 @@ public class ProgramReportServiceImpl implements ProgramReportService {
                     subconceptReport.setConcept(conceptDTO);
                 }
                 
-                // Add the mapped DTO to your list
                 subconceptReports.add(subconceptReport);
             }
             
-            // Calculate unit statistics
-            report.setTotalSubconcepts(mappings.size());
+            // Calculate unit statistics based on visible subconcepts only
+            report.setTotalSubconcepts(visibleMappings.size());
             report.setCompletedSubconcepts((int) subconceptReports.stream()
                 .filter(SubconceptReportDTO::isCompleted)
                 .count());
@@ -351,7 +417,7 @@ public class ProgramReportServiceImpl implements ProgramReportService {
             report.setSubconcepts(subconceptReports);
             report.setCompletionStatus(report.getCompletedSubconcepts() == report.getTotalSubconcepts() ? "yes" : "no");
             
-            logger.debug("Generated unit report for unitId: {} - {}/{} subconcepts completed", 
+            logger.debug("Generated unit report for unitId: {} - {}/{} visible subconcepts completed", 
                 unitId, report.getCompletedSubconcepts(), report.getTotalSubconcepts());
             
             return report;
@@ -676,7 +742,7 @@ public class ProgramReportServiceImpl implements ProgramReportService {
     
     
     @Override
-    @Cacheable(value = "userProgress", key = "#programId + '_' + #userId", unless = "#result == null")
+    @Cacheable(value = "userProgress", key = "#programId + '_' + #userId + '_' + #root.target.getUserType(#userId)", unless = "#result == null")
     public UserProgressDTO getUserProgress(String programId, String userId) {
         logger.info("Generating user progress for programId: {} and userId: {}", programId, userId);
         long startTime = System.currentTimeMillis();
@@ -690,7 +756,8 @@ public class ProgramReportServiceImpl implements ProgramReportService {
             User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + userId));
 
-            logger.debug("Found program: {} and user: {}", program.getProgramName(), user.getUserName());
+            String userType = user.getUserType();
+            logger.debug("Found program: {} and user: {} with userType: {}", program.getProgramName(), user.getUserName(), userType);
 
             // Fetch the cohort for this user in the given program
             UserCohortMapping userCohortMapping = userCohortMappingRepository
@@ -708,7 +775,7 @@ public class ProgramReportServiceImpl implements ProgramReportService {
 
             logger.debug("Found {} stages for programId: {}", stages.size(), programId);
 
-            // Process each stage - FIXED LOGIC to match generateProgramReport()
+            // Process each stage
             for (Stage stage : stages) {
                 List<Unit> units = unitRepository.findByStage_StageId(stage.getStageId());
                 totalUnits += units.size();
@@ -717,16 +784,34 @@ public class ProgramReportServiceImpl implements ProgramReportService {
                 int stageTotalUnits = units.size();
 
                 for (Unit unit : units) {
-                    List<ProgramConceptsMapping> subconcepts = 
+                    // Filter subconcepts based on user visibility
+                    List<ProgramConceptsMapping> allSubconcepts = 
                         programConceptsMappingRepository.findByUnit_UnitId(unit.getUnitId());
-                    totalSubconcepts += subconcepts.size();
+                    
+                    List<ProgramConceptsMapping> visibleSubconcepts = allSubconcepts.stream()
+                        .filter(m -> isSubconceptVisibleToUser(userType, m.getSubconcept()))
+                        .collect(Collectors.toList());
+                    
+                    totalSubconcepts += visibleSubconcepts.size();
 
+                    // Get completed subconcepts for this unit
                     List<UserSubConcept> completedSubconceptsList = userSubConceptRepository
                         .findByUser_UserIdAndUnit_UnitId(userId, unit.getUnitId());
-                    completedSubconcepts += completedSubconceptsList.size();
+                    
+                    // Filter completed subconcepts to only count visible ones
+                    Set<String> visibleSubconceptIds = visibleSubconcepts.stream()
+                        .map(m -> m.getSubconcept().getSubconceptId())
+                        .collect(Collectors.toSet());
+                    
+                    long unitCompletedSubconcepts = completedSubconceptsList.stream()
+                        .map(usc -> usc.getSubconcept().getSubconceptId())
+                        .filter(visibleSubconceptIds::contains)
+                        .count();
+                    
+                    completedSubconcepts += unitCompletedSubconcepts;
 
-                    // Check if unit is completed (all subconcepts completed)
-                    boolean unitCompleted = completedSubconceptsList.size() == subconcepts.size();
+                    // Check if unit is completed (all visible subconcepts completed)
+                    boolean unitCompleted = unitCompletedSubconcepts == visibleSubconcepts.size() && visibleSubconcepts.size() > 0;
 
                     if (unitCompleted) {
                         completedUnits++;
@@ -734,8 +819,7 @@ public class ProgramReportServiceImpl implements ProgramReportService {
                     }
                 }
 
-                // FIXED: Stage is completed when ALL its units are completed
-                // No dependency on previous stages
+                // Stage is completed when ALL its units are completed
                 if (stageCompletedUnits == stageTotalUnits && stageTotalUnits > 0) {
                     completedStages++;
                 }
