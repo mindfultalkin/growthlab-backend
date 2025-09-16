@@ -755,12 +755,17 @@ public class ProgramConceptsMappingServiceImpl implements ProgramConceptsMapping
                 logger.error("User ID is null or empty");
                 throw new IllegalArgumentException("User ID cannot be null or empty");
             }
-
-            // Step 1: Retrieve all ProgramConceptsMapping entries for the given programId
+            // Step 1: Get userType from DB
+            String userType = userRepository.findById(userId)
+                    .map(User::getUserType)
+                    .orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + userId));
+            logger.debug("User ID {} has userType: {}", userId, userType);
+            
+            // Step 2: Retrieve all ProgramConceptsMapping entries for the given programId
             List<ProgramConceptsMapping> programMappings = programConceptsMappingRepository.findByProgram_ProgramId(programId);
             logger.debug("Found {} program mappings for program ID: {}", programMappings.size(), programId);
 
-            // Step 2: Extract all unique subconcepts from the mappings
+            // Step 3: Extract all unique subconcepts from the mappings
             Set<String> subconceptIds = programMappings.stream()
                 .map(mapping -> mapping.getSubconcept().getSubconceptId())
                 .collect(Collectors.toSet());
@@ -769,12 +774,19 @@ public class ProgramConceptsMappingServiceImpl implements ProgramConceptsMapping
             // Step 3: Retrieve all subconcepts by their IDs
             List<Subconcept> subconcepts = subconceptRepository.findAllById(subconceptIds);
             logger.debug("Retrieved {} subconcepts from repository", subconcepts.size());
+            
+            //  Step 4: Apply visibility filtering
+            List<Subconcept> visibleSubconcepts = subconcepts.stream()
+                    .filter(sub -> isSubconceptVisibleToUser(userType, sub))
+                    .collect(Collectors.toList());
+            logger.debug("After filtering, {} subconcepts are visible to userType {}", visibleSubconcepts.size(), userType);
 
-            // Step 4: Retrieve user's completed subconcepts
+
+            // Step 5: Retrieve user's completed subconcepts
             Set<String> completedSubconceptIds = userSubConceptRepository.findCompletedSubconceptIdsByUser_UserId(userId);
             logger.debug("Found {} completed subconcepts for user ID: {}", completedSubconceptIds.size(), userId);
 
-            // Step 5: Retrieve user's best scores for each subconcept
+            // Step 6: Retrieve user's best scores for each subconcept
             List<Object[]> userScoresList = userAttemptsRepository.findMaxScoresByUser(userId);
             Map<String, Integer> userMaxScoreMap = new HashMap<>();
             for (Object[] row : userScoresList) {
@@ -788,7 +800,7 @@ public class ProgramConceptsMappingServiceImpl implements ProgramConceptsMapping
             Map<String, Object> response = new HashMap<>();
             List<Map<String, Object>> conceptList = new ArrayList<>();
             
-            // Step 6: Group subconcepts by concept
+            // Step 7: Group subconcepts by concept
             Map<Concept, List<Subconcept>> conceptSubconceptMap = new HashMap<>();
             for (Subconcept subconcept : subconcepts) {
                 Concept concept = subconcept.getConcept();
@@ -796,7 +808,7 @@ public class ProgramConceptsMappingServiceImpl implements ProgramConceptsMapping
             }
             logger.debug("Grouped subconcepts into {} concepts", conceptSubconceptMap.size());
             
-            // Step 7: Build concept data with score aggregation
+            // Step 8: Build concept data with score aggregation
             for (Map.Entry<Concept, List<Subconcept>> entry : conceptSubconceptMap.entrySet()) {
                 Concept concept = entry.getKey();
                 List<Subconcept> subconceptsInConcept = entry.getValue();

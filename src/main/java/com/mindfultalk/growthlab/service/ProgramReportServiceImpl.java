@@ -613,14 +613,14 @@ public class ProgramReportServiceImpl implements ProgramReportService {
     @Override
     @Cacheable(value = "cohortProgress", key = "#programId + '_' + #cohortId", unless = "#result == null")
     public CohortProgressDTO getCohortProgress(String programId, String cohortId) {
-    	logger.info("Generating cohort progress for programId: {} and cohortId: {}", programId, cohortId);
+        logger.info("Generating cohort progress for programId: {} and cohortId: {}", programId, cohortId);
         long startTime = System.currentTimeMillis();
         
         try {
-        // Fetch the program
-        Program program = programRepository.findById(programId)
-                .orElseThrow(() -> new ResourceNotFoundException("Program not found with ID: " + programId));
-            
+            // Fetch the program
+            Program program = programRepository.findById(programId)
+                    .orElseThrow(() -> new ResourceNotFoundException("Program not found with ID: " + programId));
+                
             // Fetch the cohort
             Cohort cohort = cohortRepository.findById(cohortId)
                 .orElseThrow(() -> new ResourceNotFoundException("Cohort not found with ID: " + cohortId));
@@ -638,11 +638,14 @@ public class ProgramReportServiceImpl implements ProgramReportService {
             // Prepare progress data for each user
             List<UserProgressDTO> userProgressList = new ArrayList<>();
             for (User user : users) {
-                logger.debug("Processing progress for user: {} (ID: {})", user.getUserName(), user.getUserId());
+                logger.debug("Processing progress for user: {} (ID: {}) with userType: {}", 
+                    user.getUserName(), user.getUserId(), user.getUserType());
                 
                 UserProgressDTO userProgress = new UserProgressDTO();
                 userProgress.setUserId(user.getUserId());
                 userProgress.setUserName(user.getUserName());
+                
+                String userType = user.getUserType();
                 
                 // Fetch stages for the program
                 List<Stage> stages = stageRepository.findByProgram_ProgramId(programId);
@@ -654,48 +657,58 @@ public class ProgramReportServiceImpl implements ProgramReportService {
                 int completedSubconcepts = 0;
                 
                 // Process each stage
-                boolean previousStageCompleted = true;
                 for (Stage stage : stages) {
                     List<Unit> units = unitRepository.findByStage_StageId(stage.getStageId());
                     totalUnits += units.size();
                     
-                    // Process units within stage
-                    boolean stageCompleted = true;
-                    boolean previousUnitCompleted = true;
+                    int stageCompletedUnits = 0;
+                    int stageTotalUnits = units.size();
                     
+                    // Process units within stage
                     for (Unit unit : units) {
-                        // Get all subconcepts for the unit
-                        List<ProgramConceptsMapping> subconcepts = 
+                        // Get all subconcepts for the unit and filter by user visibility
+                        List<ProgramConceptsMapping> allSubconcepts = 
                             programConceptsMappingRepository.findByUnit_UnitId(unit.getUnitId());
-                        totalSubconcepts += subconcepts.size();
+                        
+                        // Filter subconcepts based on user visibility
+                        List<ProgramConceptsMapping> visibleSubconcepts = allSubconcepts.stream()
+                            .filter(m -> isSubconceptVisibleToUser(userType, m.getSubconcept()))
+                            .collect(Collectors.toList());
+                        
+                        totalSubconcepts += visibleSubconcepts.size();
                         
                         // Get completed subconcepts for this user and unit
                         List<UserSubConcept> completedSubconceptsList = userSubConceptRepository
                             .findByUser_UserIdAndUnit_UnitId(user.getUserId(), unit.getUnitId());
-                        completedSubconcepts += completedSubconceptsList.size();
                         
-                        // Check if unit is completed (all subconcepts completed)
-                        boolean unitCompleted = previousUnitCompleted && 
-                            completedSubconceptsList.size() == subconcepts.size();
+                        // Filter completed subconcepts to only count visible ones
+                        Set<String> visibleSubconceptIds = visibleSubconcepts.stream()
+                            .map(m -> m.getSubconcept().getSubconceptId())
+                            .collect(Collectors.toSet());
+                        
+                        long unitCompletedSubconcepts = completedSubconceptsList.stream()
+                            .map(usc -> usc.getSubconcept().getSubconceptId())
+                            .filter(visibleSubconceptIds::contains)
+                            .count();
+                        
+                        completedSubconcepts += unitCompletedSubconcepts;
+                        
+                        // Check if unit is completed (all visible subconcepts completed)
+                        boolean unitCompleted = unitCompletedSubconcepts == visibleSubconcepts.size() && visibleSubconcepts.size() > 0;
                         
                         if (unitCompleted) {
                             completedUnits++;
+                            stageCompletedUnits++;
                         }
                         
-                        // Update completion tracking for next unit
-                        previousUnitCompleted = unitCompleted;
-                        if (!unitCompleted) {
-                            stageCompleted = false;
-                        }
+                        logger.debug("Unit {} for user {}: {}/{} visible subconcepts completed", 
+                            unit.getUnitName(), user.getUserName(), unitCompletedSubconcepts, visibleSubconcepts.size());
                     }
                     
-                    // Check if stage is completed (all units completed and previous stage completed)
-                    if (stageCompleted && previousStageCompleted) {
+                    // Stage is completed when ALL its units are completed
+                    if (stageCompletedUnits == stageTotalUnits && stageTotalUnits > 0) {
                         completedStages++;
                     }
-                    
-                    // Update completion tracking for next stage
-                    previousStageCompleted = stageCompleted;
                 }
                 
                 // Populate progress statistics
@@ -711,34 +724,39 @@ public class ProgramReportServiceImpl implements ProgramReportService {
                     .filter(um -> um.getUser().getUserId().equals(user.getUserId()))
                     .findFirst()
                     .orElse(null);
-            userProgress.setLeaderboardScore(mapping != null ? mapping.getLeaderboardScore() : 0);
+                userProgress.setLeaderboardScore(mapping != null ? mapping.getLeaderboardScore() : 0);
+                
+                logger.debug("User {} progress: {}/{} stages, {}/{} units, {}/{} visible subconcepts completed", 
+                    user.getUserName(), completedStages, totalStages, completedUnits, totalUnits, 
+                    completedSubconcepts, totalSubconcepts);
+                
+                userProgressList.add(userProgress);
+            }
             
-            userProgressList.add(userProgress);
-        }
-         // Sort users by leaderboard score in descending order
+            // Sort users by leaderboard score in descending order
             userProgressList.sort((u1, u2) -> Integer.compare(u2.getLeaderboardScore(), u1.getLeaderboardScore()));
             
-        // Prepare response DTO
-        CohortProgressDTO cohortProgress = new CohortProgressDTO();
-        cohortProgress.setProgramName(program.getProgramName());
-        cohortProgress.setProgramId(program.getProgramId());
-        cohortProgress.setProgramDesc(program.getProgramDesc());
-        cohortProgress.setCohortId(cohort.getCohortId());
-        cohortProgress.setCohortName(cohort.getCohortName());
-        cohortProgress.setUsers(userProgressList);
-        
-        long endTime = System.currentTimeMillis();
-        logger.info("Successfully generated cohort progress for programId: {} and cohortId: {} in {}ms. " +
-                "Processed {} users", 
-                programId, cohortId, (endTime - startTime), userProgressList.size());
-        
-        return cohortProgress;
-        
-    } catch (Exception e) {
-        logger.error("Error generating cohort progress for programId: {} and cohortId: {}", programId, cohortId, e);
-        throw e;
+            // Prepare response DTO
+            CohortProgressDTO cohortProgress = new CohortProgressDTO();
+            cohortProgress.setProgramName(program.getProgramName());
+            cohortProgress.setProgramId(program.getProgramId());
+            cohortProgress.setProgramDesc(program.getProgramDesc());
+            cohortProgress.setCohortId(cohort.getCohortId());
+            cohortProgress.setCohortName(cohort.getCohortName());
+            cohortProgress.setUsers(userProgressList);
+            
+            long endTime = System.currentTimeMillis();
+            logger.info("Successfully generated cohort progress for programId: {} and cohortId: {} in {}ms. " +
+                    "Processed {} users with user-type-specific visible subconcepts", 
+                    programId, cohortId, (endTime - startTime), userProgressList.size());
+            
+            return cohortProgress;
+            
+        } catch (Exception e) {
+            logger.error("Error generating cohort progress for programId: {} and cohortId: {}", programId, cohortId, e);
+            throw e;
+        }
     }
-}
     
     
     @Override
